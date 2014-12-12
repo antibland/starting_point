@@ -1,0 +1,18 @@
+@include keyframes(drop-bounce) {
+  70% {
+    @include transform(translateY(0) scaleX(1.1) scaleY(.8));
+  }
+  80% {
+    @include transform(translateY(0.3em) scaleX(1.3) scaleY(.7));
+  }
+  90% {
+    @include transform(translateY(0.1em) scaleX(1.1) scaleY(.9));
+  }
+  100% {
+    @include transform(translateY(0) scaleX(1) scaleY(1));
+  }
+}
+
+.drop-bounce {
+  @include animation("drop-bounce .8s forwards");
+}

@@ -1,0 +1,15 @@
+main {
+  padding: 2em 1em;
+  max-width: 40em;
+  margin: 0 auto;
+  height: 100%;
+
+  @include transition(0.3s ease-in, 0.3s);
+  @include transform(scale(0.95, 0.95));
+  @include opacity(0);
+
+  [aria-busy=false] & {
+    @include transform(scale(1, 1));
+    @include opacity(1);
+  }
+}

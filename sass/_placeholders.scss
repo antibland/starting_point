@@ -1,0 +1,51 @@
+%links {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: $green;
+  }
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+%hr {
+    margin: rhythm(2) 0;
+    border: 0;
+    height: 1px;
+    @include background-image(
+      linear-gradient(to right,
+                      rgba(0,0,0,0),
+                      rgba(0,0,0,0.55),
+                      rgba(0,0,0,0))
+    );
+}
+
+%video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+%image-container {
+  @include transition;
+  width: 150%;
+  margin-left: -25%;
+
+  @include respond-to(medium) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
