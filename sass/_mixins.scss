@@ -208,3 +208,15 @@
     }
   }
 }
+
+@mixin section-header($bg-color: $orange, $fg-color: $darkgray) {
+  background-color: $bg-color;
+  color: $fg-color;
+  padding: rhythm(.25) 0;
+  margin-bottom: rhythm(1);
+  border: 1px solid darken($bg-color, 10%);
+  text-align: center;
+  width: 200%;
+  margin-left: -50%;
+  font-size: 1.3rem;
+}

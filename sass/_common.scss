@@ -12,6 +12,28 @@ button,
   @include remove-tap-highlight;
 }
 
+main {
+  padding: 0 1em;
+  max-width: 40em;
+  margin: 0 auto;
+  height: 100%;
+}
+
+h1 {
+  margin-bottom: rhythm(1);
+  section & {
+    margin-bottom: 0;
+  }
+}
+
+section {
+  margin-bottom: rhythm(2);
+
+  section {
+    padding: 0;
+  }
+}
+
 label {
   @include user-select(none);
 }
@@ -42,6 +64,14 @@ button,
   @include button;
 }
 
+.container {
+  overflow: hidden;
+}
+
+.section-header {
+  @include section-header;
+}
+
 //=================================
 // Extend from placeholders
 //=================================
@@ -68,8 +98,4 @@ hr {
 
 .center {
   text-align: center;
-}
-
-.container {
-  overflow: hidden;
 }
