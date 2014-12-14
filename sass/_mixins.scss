@@ -221,19 +221,25 @@
   font-size: 1.3rem;
 }
 
-@mixin form(
-  $bg-color: #fff,
-  $max-width: 18.5em,
-  $max-height: 23em
-  ) {
+@mixin create-property($custom_args, $default_key, $props...) {
+  @each $prop in $props {
+    $key: if(map-has-key($custom_args, $prop), $custom_args, $default_key);
+    #{$prop}: map-get($key, $prop);
+  }
+}
+
+@mixin form($custom_args) {
+  @include create-property(
+    $custom_args,
+    $form_defaults,
+    background-color, max-height, max-width
+  );
+
   @include border-radius($border-radius);
   @include mobile-smooth-scroll;
-  background-color: $bg-color;
   display: block;
   margin: rhythm(1) auto 0;
   padding: rhythm(1)*.5;
-  max-height: $max-height;
-  max-width: $max-width;
   text-align: left;
 
   h2 {

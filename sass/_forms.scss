@@ -1,5 +1,9 @@
 form {
-  @include form(lighten(lightgray, 10%), 22em);
+  $form_args: (
+    background-color: lighten(lightgray, 10%),
+    max-width: 22em
+  );
+  @include form($form_args);
 }
 
 label {
