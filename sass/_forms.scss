@@ -1,5 +1,5 @@
 form {
-  @include form(lighten(lightgray, 10%));
+  @include form(lighten(lightgray, 10%), 22em);
 }
 
 label {

@@ -223,8 +223,8 @@
 
 @mixin form(
   $bg-color: #fff,
-  $max-height: 23em,
-  $max-width: 18.5em
+  $max-width: 18.5em,
+  $max-height: 23em
   ) {
   @include border-radius($border-radius);
   @include mobile-smooth-scroll;
