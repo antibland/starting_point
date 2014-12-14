@@ -220,3 +220,47 @@
   margin-left: -50%;
   font-size: 1.3rem;
 }
+
+@mixin form(
+  $bg-color: #fff,
+  $max-height: 23em,
+  $max-width: 18.5em
+  ) {
+  @include border-radius($border-radius);
+  @include mobile-smooth-scroll;
+  background-color: $bg-color;
+  display: block;
+  margin: rhythm(1) auto 0;
+  padding: rhythm(1)*.5;
+  max-height: $max-height;
+  max-width: $max-width;
+  text-align: left;
+
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  p {
+    color: $darkgray;
+    font-size: 0.8rem;
+    margin: 0.75rem 0;
+  }
+
+  .terms {
+    margin-top: 0;
+  }
+}
+
+@mixin form-label($font-size: 0.75rem) {
+  font-size: $font-size;
+  cursor: pointer;
+
+  &[data-required=true] {
+    &:after {
+      content: 'required';
+      color: red;
+      float: right;
+    }
+  }
+}
