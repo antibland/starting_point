@@ -209,30 +209,35 @@
   }
 }
 
-@mixin section-header($bg-color: $orange, $fg-color: $darkgray) {
-  background-color: $bg-color;
-  color: $fg-color;
+@mixin create-property($custom_args, $defaults) {
+  @each $property, $value in $defaults {
+    @if ($custom_args != "" and map-has-key($custom_args, $property)) {
+      #{$property}: map-get($custom_args, $property);
+    } @else {
+      #{$property}: map-get($defaults, $property);
+    }
+  }
+}
+
+@mixin section-header($custom_args: "") {
+  @include create-property(
+    $custom_args,
+    $section_header_defaults
+  );
+
   padding: rhythm(.25) 0;
   margin-bottom: rhythm(1);
-  border: 1px solid darken($bg-color, 10%);
+  border: 1px solid gray;
   text-align: center;
   width: 200%;
   margin-left: -50%;
   font-size: 1.3rem;
 }
 
-@mixin create-property($custom_args, $default_key, $props...) {
-  @each $prop in $props {
-    $key: if(map-has-key($custom_args, $prop), $custom_args, $default_key);
-    #{$prop}: map-get($key, $prop);
-  }
-}
-
-@mixin form($custom_args) {
+@mixin form($custom_args: "") {
   @include create-property(
     $custom_args,
-    $form_defaults,
-    background-color, max-height, max-width
+    $form_defaults
   );
 
   @include border-radius($border-radius);

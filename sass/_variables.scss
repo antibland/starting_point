@@ -6,10 +6,16 @@ $green: #78DFB8;
 $blue: #094983;
 $orange: #ff7639;
 $input-focus-color: gray;
-$checkbox-focus-color: black;
+
+// map defaults
 
 $form_defaults: (
   background-color: white,
   max-height: 23em,
   max-width: 18.5em
+);
+
+$section_header_defaults: (
+  background-color: $orange,
+  color: $darkgray
 );
