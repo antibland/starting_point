@@ -55,6 +55,7 @@ var main = (function() {
 
     window.addEventListener("load", loaded);
     toggle_menu.addEventListener("click", toggleMenu);
+    toggle_menu.addEventListener("touchstart", toggleMenu);
 
     document.onkeydown = function(e) {
       if (e.keyCode === ESC) {
