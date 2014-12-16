@@ -14,12 +14,20 @@ var main = (function() {
     body.setAttribute("aria-busy", "false");
   }
 
-  function closeMenu() {
+  function closeMenu(transitions_off) {
+    if (typeof transitions_off !== "undefined") {
+      body.classList.add("transitions-off");
+    }
+
     body.classList.remove("menu-open");
     nav.setAttribute("aria-hidden", "true");
+    setTimeout(function() {
+      body.classList.remove("transitions-off");
+    });
+
   }
 
-  function toggleMenu() {
+  function toggleMenu(fast_close) {
     if (body.classList.contains("menu-open")) {
       body.classList.remove("menu-open");
       nav.setAttribute("aria-hidden", "true");
@@ -31,13 +39,18 @@ var main = (function() {
 
   function bindings() {
     var toggle_menu    = document.querySelector("#toggle-menu"),
-        sidebar_close  = document.querySelector("nav button"),
         content_pusher = document.querySelector(".content-pusher"),
+        nav_links      = document.querySelectorAll(".nav-link"),
         ESC            = 27;
+
+    [].forEach.call(nav_links, function(el) {
+      el.addEventListener("click", function(e) {
+        closeMenu(true);
+      });
+    });
 
     window.addEventListener("load", loaded);
     toggle_menu.addEventListener("click", toggleMenu);
-    sidebar_close.addEventListener("click", toggleMenu);
 
     document.onkeydown = function(e) {
       if (e.keyCode === ESC) {

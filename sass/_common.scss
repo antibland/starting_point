@@ -107,3 +107,7 @@ hr {
 .center {
   text-align: center;
 }
+
+.transitions-off * {
+  @include transitions-off;
+}
