@@ -21,8 +21,15 @@ main {
 
 h1 {
   margin-bottom: rhythm(1);
+
   section & {
     margin-bottom: 0;
+  }
+
+  header & {
+    padding: 0 1em;
+    text-align: center;
+    padding-top: rhythm(1);
   }
 }
 
@@ -66,6 +73,7 @@ button,
 
 .container {
   overflow: hidden;
+  position: relative;
 }
 
 .section-header {

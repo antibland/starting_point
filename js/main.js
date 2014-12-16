@@ -2,18 +2,49 @@
 var main = (function() {
   var transitionend = utilities.whichTransitionEvent(),
       animationend  = utilities.whichAnimationEvent(),
-      main          = document.querySelector("main");
+      main          = document.querySelector("main"),
+      body          = document.querySelector("body"),
+      nav           = document.querySelector("[role=navigation]");
 
   function init() {
     bindings();
   }
 
   function loaded() {
-    document.querySelector("body").setAttribute("aria-busy", "false");
+    body.setAttribute("aria-busy", "false");
+  }
+
+  function closeMenu() {
+    body.classList.remove("menu-open");
+    nav.setAttribute("aria-hidden", "true");
+  }
+
+  function toggleMenu() {
+    if (body.classList.contains("menu-open")) {
+      body.classList.remove("menu-open");
+      nav.setAttribute("aria-hidden", "true");
+    } else {
+      body.classList.add("menu-open");
+      nav.setAttribute("aria-hidden", "false");
+    }
   }
 
   function bindings() {
+    var toggle_menu    = document.querySelector("#toggle-menu"),
+        sidebar_close  = document.querySelector("nav button"),
+        content_pusher = document.querySelector(".content-pusher"),
+        ESC            = 27;
+
     window.addEventListener("load", loaded);
+    toggle_menu.addEventListener("click", toggleMenu);
+    sidebar_close.addEventListener("click", toggleMenu);
+
+    document.onkeydown = function(e) {
+      if (e.keyCode === ESC) {
+        closeMenu();
+      }
+    }
+
     document.addEventListener("touchstart", function(){}, true);
   }
 

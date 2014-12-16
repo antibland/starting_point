@@ -7,66 +7,87 @@
   <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body class="home">
+
   <div class="container">
-    <main>
+    <nav aria-hidden="true" role="navigation" aria-label="Sidebar navigation">
+      <h2 id="navigation-header">Sections</h2>
+      <ul aria-labelledby="navigation-header">
+        <li><a class="nav-link" href="#headers-header">Headers</a></li>
+        <li><a class="nav-link" href="#p-header">Paragraphs</a></li>
+        <li><a class="nav-link" href="#img-header">Images</a></li>
+        <li><a class="nav-link" href="#video-header">Videos</a></li>
+        <li><a class="nav-link" href="#forms-header">Forms</a></li>
+      </ul>
       <div class="center">
-        <h1>Starting Point</h1>
-
-        <section role="region" aria-labelledby="headers-header">
-          <h2 id="headers-header" class="section-header">Headers</h2>
-          <section>
-            <h1>Brown fox is sick</h1>
-            <h2>Brown fox is sick</h2>
-            <h3>Brown fox is sick</h3>
-            <h4>Brown fox is sick</h4>
-            <h5>Brown fox is sick</h5>
-          </section>
-        </section>
-
-        <section role="region" aria-labelledby="p-header">
-          <h2 id="p-header" class="section-header">Paragraphs</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
-        </section>
-
-        <section role="region" aria-labelledby="img-header">
-          <h2 id="img-header" class="section-header">Images</h2>
-          <div class="img-container">
-            <img src="assets/sample.jpg" alt="">
-          </div>
-        </section>
-
-        <section role="region" aria-labelledby="video-header">
-          <h2 id="video-header" class="section-header">Videos</h2>
-          <div class="video-container">
-            <iframe src="http://www.youtube.com/embed/Moq_it9Vnz8" frameborder="0"></iframe>
-          </div>
-        </section>
-
-        <section role="region" aria-labelledby="forms-header">
-          <h2 id="forms-header" class="section-header">Forms</h2>
-          <section>
-            <form action="" method="post" aria-labelledby="register-form-title">
-              <h2 id="register-form-title">Register</h2>
-              <label data-required="true" for="email">email</label>
-              <input autocorrect="off" autocapitalize="off" type="email" id="email" name="email" required aria-required="true" placeholder="email">
-              <label data-required="true" for="password">password</label>
-              <input type="password" id="password" name="password" required aria-required="true" placeholder="password">
-              <p class="terms">
-                <input type="checkbox" name="terms" id="terms" required aria-required="true">
-                <label for="terms">I accept the <a href="#">Terms of Use</a></label>
-              </p>
-              <div class="center">
-                <input type="submit" value="Register" class="button full-width">
-              </div>
-              <div class="account-direction">
-                <p>Have an account? <a href="#">Log in</a></p>
-              </div>
-            </form>
-          </section>
-        </section>
+        <button value="Close menu">Close</button>
       </div>
-    </main>
+    </nav>
+
+    <div class="content-pusher">
+      <header>
+        <h1>Starting Point</h1>
+        <button tabindex="0" id="toggle-menu" value="toggle menu"></button>
+      </header>
+
+      <main>
+        <div class="center">
+          <section role="region" aria-labelledby="headers-header">
+            <h2 id="headers-header" class="section-header">Headers</h2>
+            <section>
+              <h1>Brown fox is sick</h1>
+              <h2>Brown fox is sick</h2>
+              <h3>Brown fox is sick</h3>
+              <h4>Brown fox is sick</h4>
+              <h5>Brown fox is sick</h5>
+            </section>
+          </section>
+
+          <section role="region" aria-labelledby="p-header">
+            <h2 id="p-header" class="section-header">Paragraphs</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
+          </section>
+
+          <section role="region" aria-labelledby="img-header">
+            <h2 id="img-header" class="section-header">Images</h2>
+            <div class="img-container">
+              <img src="assets/sample.jpg" alt="">
+            </div>
+          </section>
+
+          <section role="region" aria-labelledby="video-header">
+            <h2 id="video-header" class="section-header">Videos</h2>
+            <div class="video-container">
+              <iframe src="http://www.youtube.com/embed/Moq_it9Vnz8" frameborder="0"></iframe>
+            </div>
+          </section>
+
+          <section role="region" aria-labelledby="forms-header">
+            <h2 id="forms-header" class="section-header">Forms</h2>
+            <section>
+              <form action="" method="post" aria-labelledby="register-form-title">
+                <h2 id="register-form-title">Register</h2>
+                <label data-required="true" for="email">email</label>
+                <input autocorrect="off" autocapitalize="off" type="email" id="email" name="email" required aria-required="true" placeholder="email">
+                <label data-required="true" for="password">password</label>
+                <input type="password" id="password" name="password" required aria-required="true" placeholder="password">
+                <p class="terms">
+                  <input type="checkbox" name="terms" id="terms" required aria-required="true">
+                  <label for="terms">I accept the <a href="#">Terms of Use</a></label>
+                </p>
+                <div class="center">
+                  <input type="submit" value="Register" class="button full-width">
+                </div>
+                <div class="account-direction">
+                  <p>Have an account? <a href="#">Log in</a></p>
+                </div>
+              </form>
+            </section>
+          </section>
+        </div>
+      </main>
+
+    </div>
   </div>
   <script src="js/utilities.js"></script>
   <script src="js/main.js"></script>
