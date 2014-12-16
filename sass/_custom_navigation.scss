@@ -3,6 +3,7 @@ body.menu-open {
 }
 
 #toggle-menu {
+  @include user-select(none);
   @include border-radius(0);
   @include box-shadow(none);
   @include text-shadow(none);

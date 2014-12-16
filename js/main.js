@@ -34,6 +34,10 @@ var main = (function() {
     } else {
       body.classList.add("menu-open");
       nav.setAttribute("aria-hidden", "false");
+
+      setTimeout(function() {
+        nav.focus();
+      }, 300);
     }
   }
 
