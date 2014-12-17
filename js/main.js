@@ -1,10 +1,11 @@
 "use strict";
 var main = (function() {
-  var transitionend = utilities.whichTransitionEvent(),
-      animationend  = utilities.whichAnimationEvent(),
-      main          = document.querySelector("main"),
-      body          = document.querySelector("body"),
-      nav           = document.querySelector("[role=navigation]");
+  var transitionend  = utilities.whichTransitionEvent(),
+      animationend   = utilities.whichAnimationEvent(),
+      main           = document.querySelector("main"),
+      body           = document.querySelector("body"),
+      nav            = document.querySelector("[role=navigation]"),
+      content_pusher =document.querySelector(".content-pusher");
 
   function init() {
     bindings();
@@ -24,16 +25,27 @@ var main = (function() {
     setTimeout(function() {
       body.classList.remove("transitions-off");
     });
-
   }
 
-  function toggleMenu(fast_close) {
+  function disableMobileScrolling() {
+    content_pusher.addEventListener("touchstart", function(e) { e.preventDefault(); });
+    content_pusher.addEventListener("touchmove", function(e) { e.preventDefault(); });
+  }
+
+  function enableMobileScrolling() {
+    content_pusher.removeEventListener("touchstart", function(e) {});
+    content_pusher.removeEventListener("touchmove", function(e) {});
+  }
+
+  function toggleMenu() {
     if (body.classList.contains("menu-open")) {
       body.classList.remove("menu-open");
       nav.setAttribute("aria-hidden", "true");
+      disableMobileScrolling();
     } else {
       body.classList.add("menu-open");
       nav.setAttribute("aria-hidden", "false");
+      enableMobileScrolling();
 
       setTimeout(function() {
         nav.focus();
@@ -43,7 +55,6 @@ var main = (function() {
 
   function bindings() {
     var toggle_menu    = document.querySelector("#toggle-menu"),
-        content_pusher = document.querySelector(".content-pusher"),
         nav_links      = document.querySelectorAll(".nav-link"),
         ESC            = 27;
 
