@@ -20,8 +20,10 @@ var main = (function() {
       body.classList.add("transitions-off");
     }
 
+    enableMobileScrolling();
     body.classList.remove("menu-open");
     nav.setAttribute("aria-hidden", "true");
+
     setTimeout(function() {
       body.classList.remove("transitions-off");
     });
