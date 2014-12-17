@@ -27,25 +27,33 @@ var main = (function() {
     });
   }
 
+  function preventDefault(e) {
+    if (e.preventDefault()) {
+      e.preventDefault();
+    } else {
+      return false;
+    }
+  }
+
   function disableMobileScrolling() {
-    content_pusher.addEventListener("touchstart", function(e) { e.preventDefault(); });
-    content_pusher.addEventListener("touchmove", function(e) { e.preventDefault(); });
+    content_pusher.addEventListener("touchstart", preventDefault);
+    content_pusher.addEventListener("touchmove", preventDefault);
   }
 
   function enableMobileScrolling() {
-    content_pusher.removeEventListener("touchstart", function(e) {});
-    content_pusher.removeEventListener("touchmove", function(e) {});
+    content_pusher.removeEventListener("touchstart", preventDefault);
+    content_pusher.removeEventListener("touchmove", preventDefault);
   }
 
   function toggleMenu() {
     if (body.classList.contains("menu-open")) {
       body.classList.remove("menu-open");
       nav.setAttribute("aria-hidden", "true");
-      disableMobileScrolling();
+      enableMobileScrolling();
     } else {
       body.classList.add("menu-open");
       nav.setAttribute("aria-hidden", "false");
-      enableMobileScrolling();
+      disableMobileScrolling();
 
       setTimeout(function() {
         nav.focus();
