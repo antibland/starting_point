@@ -69,6 +69,7 @@ var main = (function() {
     var pos_from_top = window.scrollY;
 
     function resetBodyStyles() {
+      body.style.overflowY = "hidden";
       body.style.webkitTransition = 'none';
       body.style.transition = 'none';
       body.style.webkitTransform = 'none';
@@ -78,6 +79,7 @@ var main = (function() {
 
     function scrollEndHandler() {
       body.removeEventListener(transitionend, scrollEndHandler);
+      body.style.overflowY = "hidden";
       window.scrollTo(0, 0);
       resetBodyStyles();
     }
