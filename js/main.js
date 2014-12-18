@@ -68,10 +68,18 @@ var main = (function() {
   function backToTop() {
     var pos_from_top = window.scrollY;
 
+    function resetBodyStyles() {
+      body.style.webkitTransition = 'none';
+      body.style.transition = 'none';
+      body.style.webkitTransform = 'none';
+      body.style.transform = 'none';
+      body.style.removeProperty('overflow-y');
+    }
+
     function scrollEndHandler() {
-      window.scrollTo(0, 0);
       body.removeEventListener(transitionend, scrollEndHandler);
-      body.removeAttribute("style");
+      window.scrollTo(0, 0);
+      resetBodyStyles();
     }
 
     body.style.overflowY = "scroll";
