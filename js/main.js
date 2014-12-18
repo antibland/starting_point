@@ -68,6 +68,12 @@ var main = (function() {
   function backToTop() {
     var pos_from_top = window.scrollY;
 
+    function scrollEndHandler() {
+      window.scrollTo(0, 0);
+      body.removeAttribute("style");
+      body.removeEventListener(transitionend, scrollEndHandler);
+    }
+
     body.style.overflowY = "scroll";
     window.scrollTop = 0;
 
@@ -77,13 +83,7 @@ var main = (function() {
     body.style.webkitTransform = "translateY(" + pos_from_top + "px)";
     body.style.transform = "translateY(" + pos_from_top + "px)";
 
-    transitionend && body.addEventListener(transitionend, function() {
-      body.style.webkitTransition = 'none';
-      body.style.transition = 'none';
-      window.scrollTo(0, 0);
-      body.style.webkitTransform = 'none';
-      body.style.transform = 'none';
-    });
+    transitionend && body.addEventListener(transitionend, scrollEndHandler);
   }
 
   function bindings() {
