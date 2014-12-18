@@ -48,7 +48,7 @@ body.menu-open {
   display: inline-block;
   @include background-size(44px 44px);
   position: fixed;
-  bottom: 1.5em;
+  bottom: 1.75em;
   right: 1em;
 
   .menu-open & {
