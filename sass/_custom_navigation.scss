@@ -48,11 +48,12 @@ body.menu-open {
   display: inline-block;
   @include background-size(44px 44px);
   position: fixed;
-  bottom: 2em;
+  bottom: 3em;
   right: 1em;
 
   .menu-open & {
     opacity: 0;
+    pointer-events: none;
   }
 }
 
