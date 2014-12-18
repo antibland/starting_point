@@ -70,8 +70,8 @@ var main = (function() {
 
     function scrollEndHandler() {
       window.scrollTo(0, 0);
-      body.removeAttribute("style");
       body.removeEventListener(transitionend, scrollEndHandler);
+      body.removeAttribute("style");
     }
 
     body.style.overflowY = "scroll";
