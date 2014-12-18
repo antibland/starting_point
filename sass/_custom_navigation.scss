@@ -3,7 +3,6 @@ body.menu-open {
 }
 
 #toggle-menu {
-  @include user-select(none);
   @include box-shadow(none);
   @include text-shadow(none);
   border: none;
@@ -49,7 +48,7 @@ body.menu-open {
   display: inline-block;
   @include background-size(44px 44px);
   position: fixed;
-  bottom: 1em;
+  bottom: 1.5em;
   right: 1em;
 
   .menu-open & {
