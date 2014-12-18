@@ -73,7 +73,9 @@ var main = (function() {
       container.removeEventListener(transitionend, scrollEndHandler);
       window.scrollTo(0, 0);
       container.removeAttribute("style");
-      body.classList.remove('body-scrolling');
+      setTimeout(function() {
+        body.classList.remove('body-scrolling');
+      });
     }
 
     body.classList.add('body-scrolling');
@@ -91,9 +93,9 @@ var main = (function() {
   }
 
   function bindings() {
-    var toggle_menu    = document.querySelector("#toggle-menu"),
-        nav_links      = document.querySelectorAll(".nav-link"),
-        ESC            = 27;
+    var toggle_menu = document.querySelector("#toggle-menu"),
+        nav_links   = document.querySelectorAll(".nav-link"),
+        ESC         = 27;
 
     [].forEach.call(nav_links, function(el) {
       el.addEventListener("click", function(e) {
