@@ -69,6 +69,7 @@ img {
 button,
 .button {
   @include button;
+  @include remove-tap-highlight;
 }
 
 .container {
