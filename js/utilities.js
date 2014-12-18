@@ -9,12 +9,12 @@ var utilities = (function() {
           'WebkitTransition':'webkitAnimationEnd'
         };
 
-      for (a in animations){
-        if(el.style[a] !== undefined){
-          return animations[a];
-        }
+    for (a in animations){
+      if(el.style[a] !== undefined){
+        return animations[a];
       }
     }
+  }
 
   function whichTransitionEvent() {
     var t,
@@ -33,8 +33,13 @@ var utilities = (function() {
     }
   }
 
+  function isTouchDevice() {
+    return 'ontouchstart' in document.documentElement;
+  }
+
   return {
-    whichAnimationEvent: whichAnimationEvent,
-    whichTransitionEvent: whichTransitionEvent
+    whichAnimationEvent  : whichAnimationEvent,
+    whichTransitionEvent : whichTransitionEvent,
+    isTouchDevice        : isTouchDevice
   }
 })();

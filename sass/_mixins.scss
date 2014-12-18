@@ -135,6 +135,25 @@
     width: 100%;
     padding: 0.55em 0.6em;
   }
+
+  &.basic {
+    @include user-select(none);
+    @include box-shadow(none);
+    @include text-shadow(none);
+    border: none;
+    color: #333;
+    min-width: 0;
+    margin: 0;
+    z-index: 100;
+
+    &:active {
+      @include transform(none);
+    }
+
+    &:before {
+      background-image: none;
+    }
+  }
 }
 
 @mixin mobile-smooth-scroll {

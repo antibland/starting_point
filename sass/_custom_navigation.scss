@@ -4,7 +4,6 @@ body.menu-open {
 
 #toggle-menu {
   @include user-select(none);
-
   @include box-shadow(none);
   @include text-shadow(none);
   border: none;
@@ -39,6 +38,23 @@ body.menu-open {
   margin: 0.5em 0 0.5em 0.5em;
   display: inline-block;
   @include background-size(20px 28px);
+}
+
+#back-to-top {
+  @include transition(0.3s opacity);
+  @include opacity(1);
+  background: url(../assets/arrow_up.svg) 0 0 transparent no-repeat;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  @include background-size(44px 44px);
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+
+  .menu-open & {
+    opacity: 0;
+  }
 }
 
 nav {

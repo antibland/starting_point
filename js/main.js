@@ -2,10 +2,12 @@
 var main = (function() {
   var transitionend  = utilities.whichTransitionEvent(),
       animationend   = utilities.whichAnimationEvent(),
+      click_touch    = utilities.isTouchDevice() ? "touchstart" : "click",
       main           = document.querySelector("main"),
       body           = document.querySelector("body"),
       nav            = document.querySelector("[role=navigation]"),
-      content_pusher =document.querySelector(".content-pusher");
+      content_pusher = document.querySelector(".content-pusher"),
+      back_to_top    = document.querySelector("#back-to-top");
 
   function init() {
     bindings();
@@ -63,20 +65,40 @@ var main = (function() {
     }
   }
 
+  function backToTop() {
+/*    var from_top = document.body.scrollTop;
+
+    body.style.marginTop = -(from_top) + "px";
+    body.style.overflowY = "scroll";
+    window.scrollTop = 0;
+
+    // Add the transition property to the body element
+    $("body").css("transition", "all 1s ease");
+    // Apply the scroll effects
+    $("body").css("margin-top", "0");
+    // Wait until the transition end
+    $("body").on("webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd", function(){
+      // Remove the transition property
+      $("body").css("transition", "none");
+    });*/
+
+    window.scrollTo(0, 0);
+  }
+
   function bindings() {
     var toggle_menu    = document.querySelector("#toggle-menu"),
         nav_links      = document.querySelectorAll(".nav-link"),
         ESC            = 27;
 
     [].forEach.call(nav_links, function(el) {
-      el.addEventListener("click", function(e) {
+      el.addEventListener(click_touch, function(e) {
         closeMenu(true);
       });
     });
 
     window.addEventListener("load", loaded);
-    toggle_menu.addEventListener("click", toggleMenu);
-    toggle_menu.addEventListener("touchstart", toggleMenu);
+    toggle_menu.addEventListener(click_touch, toggleMenu);
+    back_to_top.addEventListener(click_touch, backToTop);
 
     document.onkeydown = function(e) {
       if (e.keyCode === ESC) {
