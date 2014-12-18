@@ -75,6 +75,7 @@ button,
 .container {
   overflow: hidden;
   position: relative;
+  will-change: transform, scroll-position;
 }
 
 .section-header {

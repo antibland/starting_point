@@ -5,6 +5,7 @@ var main = (function() {
       click_touch    = utilities.isTouchDevice() ? "touchstart" : "click",
       main           = document.querySelector("main"),
       body           = document.querySelector("body"),
+      container      = document.querySelector(".container"),
       nav            = document.querySelector("[role=navigation]"),
       content_pusher = document.querySelector(".content-pusher"),
       back_to_top    = document.querySelector("#back-to-top");
@@ -69,24 +70,24 @@ var main = (function() {
     var pos_from_top = window.scrollY;
 
     function scrollEndHandler() {
+      container.removeEventListener(transitionend, scrollEndHandler);
       window.scrollTo(0, 0);
-      body.removeAttribute("style");
-      body.removeEventListener(transitionend, scrollEndHandler);
+      container.removeAttribute("style");
       body.classList.remove('body-scrolling');
     }
 
     body.classList.add('body-scrolling');
 
-    body.style.overflowY = "scroll";
+    container.style.overflowY = "scroll";
     window.scrollTop = 0;
 
-    body.style.webkitTransition = 'all .5s ease';
-    body.style.transition = 'all .5s ease';
+    container.style.webkitTransition = 'all .5s ease-out';
+    container.style.transition = 'all .5s ease-out';
 
-    body.style.webkitTransform = "translateY(" + pos_from_top + "px)";
-    body.style.transform = "translateY(" + pos_from_top + "px)";
+    container.style.webkitTransform = "translateY(" + pos_from_top + "px)";
+    container.style.transform = "translateY(" + pos_from_top + "px)";
 
-    transitionend && body.addEventListener(transitionend, scrollEndHandler);
+    transitionend && container.addEventListener(transitionend, scrollEndHandler);
   }
 
   function bindings() {

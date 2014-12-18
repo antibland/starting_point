@@ -137,7 +137,6 @@
   }
 
   &.basic {
-    @include user-select(none);
     @include box-shadow(none);
     @include text-shadow(none);
     border: none;
