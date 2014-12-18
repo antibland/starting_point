@@ -4,23 +4,29 @@ body.menu-open {
 
 #toggle-menu {
   @include user-select(none);
-  @include border-radius(0);
+
   @include box-shadow(none);
   @include text-shadow(none);
   border: none;
   color: #333;
   min-width: 0;
   margin: 0;
-  padding: 0;
   background: url(../assets/menu.svg) 0 0 transparent no-repeat;
   width: 30px;
   height: 25px;
   @include background-size(30px 25px);
   position: absolute;
-  right: 1em;
-  top: 1em;
+  right: 0.75em;
+  top: 0.75em;
   text-indent: -9999px;
   z-index: 110;
+  padding: 1.25em;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-position: 50% 50%;
+
+  &:active {
+    @include transform(none);
+  }
 
   &:before {
     background-image: none;
@@ -31,6 +37,7 @@ body.menu-open {
   background: url(../assets/icedcream.svg) 0 45% transparent no-repeat;
   padding-left: 38px;
   margin: 0.5em 0 0.5em 0.5em;
+  display: inline-block;
   @include background-size(20px 28px);
 }
 
