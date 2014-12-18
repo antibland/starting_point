@@ -66,23 +66,24 @@ var main = (function() {
   }
 
   function backToTop() {
-/*    var from_top = document.body.scrollTop;
+    var pos_from_top = window.scrollY;
 
-    body.style.marginTop = -(from_top) + "px";
     body.style.overflowY = "scroll";
     window.scrollTop = 0;
 
-    // Add the transition property to the body element
-    $("body").css("transition", "all 1s ease");
-    // Apply the scroll effects
-    $("body").css("margin-top", "0");
-    // Wait until the transition end
-    $("body").on("webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd", function(){
-      // Remove the transition property
-      $("body").css("transition", "none");
-    });*/
+    body.style.webkitTransition = 'all .5s ease';
+    body.style.transition = 'all .5s ease';
 
-    window.scrollTo(0, 0);
+    body.style.webkitTransform = "translateY(" + pos_from_top + "px)";
+    body.style.transform = "translateY(" + pos_from_top + "px)";
+
+    transitionend && body.addEventListener(transitionend, function() {
+      body.style.webkitTransition = 'none';
+      body.style.transition = 'none';
+      window.scrollTo(0, 0);
+      body.style.webkitTransform = 'none';
+      body.style.transform = 'none';
+    });
   }
 
   function bindings() {

@@ -27,7 +27,7 @@ var utilities = (function() {
         };
 
     for (t in transitions){
-      if(el.style[t] !== undefined){
+      if (el.style[t] !== undefined){
         return transitions[t];
       }
     }
