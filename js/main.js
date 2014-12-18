@@ -72,7 +72,10 @@ var main = (function() {
       window.scrollTo(0, 0);
       body.removeAttribute("style");
       body.removeEventListener(transitionend, scrollEndHandler);
+      body.classList.remove('body-scrolling');
     }
+
+    body.classList.add('body-scrolling');
 
     body.style.overflowY = "scroll";
     window.scrollTop = 0;

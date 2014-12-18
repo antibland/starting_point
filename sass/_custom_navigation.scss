@@ -51,7 +51,8 @@ body.menu-open {
   bottom: 3em;
   right: 1em;
 
-  .menu-open & {
+  .menu-open &,
+  .body-scrolling & {
     opacity: 0;
     pointer-events: none;
   }
