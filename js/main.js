@@ -91,7 +91,7 @@ var main = (function() {
         ESC            = 27;
 
     [].forEach.call(nav_links, function(el) {
-      el.addEventListener("touchend", function(e) {
+      el.addEventListener("click", function(e) {
         closeMenu(true);
       });
     });
