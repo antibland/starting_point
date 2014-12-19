@@ -71,8 +71,8 @@ var main = (function() {
 
     function scrollEndHandler() {
       container.removeEventListener(transitionend, scrollEndHandler);
-      //window.scrollTo(0, 0);
-      //container.removeAttribute("style");
+      container.removeAttribute("style");
+      window.scrollTo(0, 0);
       body.classList.remove('body-scrolling');
     }
 
