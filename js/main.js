@@ -1,5 +1,6 @@
-"use strict";
 var main = (function() {
+  "use strict";
+
   var transitionend  = utilities.whichTransitionEvent(),
       animationend   = utilities.whichAnimationEvent(),
       click_touch    = utilities.isTouchDevice() ? "touchstart" : "click",
@@ -70,10 +71,14 @@ var main = (function() {
     var pos_from_top = window.scrollY;
 
     function scrollEndHandler() {
-      container.removeEventListener(transitionend, scrollEndHandler);
+      removeListener();
       container.removeAttribute("style");
       window.scrollTo(0, 0);
       body.classList.remove('body-scrolling');
+    }
+
+    function removeListener() {
+      container.removeEventListener(transitionend, scrollEndHandler);
     }
 
     body.classList.add('body-scrolling');
@@ -87,7 +92,9 @@ var main = (function() {
     container.style.webkitTransform = "translateY(" + pos_from_top + "px)";
     container.style.transform = "translateY(" + pos_from_top + "px)";
 
-    transitionend && container.addEventListener(transitionend, scrollEndHandler);
+    if (transitionend) {
+      container.addEventListener(transitionend, scrollEndHandler, false);
+    }
   }
 
   function bindings() {
@@ -109,7 +116,7 @@ var main = (function() {
       if (e.keyCode === ESC) {
         closeMenu();
       }
-    }
+    };
 
     document.addEventListener("touchstart", function(){}, true);
   }
@@ -119,15 +126,18 @@ var main = (function() {
         next_up     = document.querySelector(obj.next_up),
         apply       = obj.apply;
 
-    transitionend && waiting_for.addEventListener(transitionend, function() {
+    function applyClass() {
       next_up.classList.add(apply);
-    });
+    }
+
+    if (transitionend) {
+      waiting_for.addEventListener(transitionend, applyClass, false);
+    }
   }
 
   function loadTemplate(template, destination) {
     var t           = document.querySelector(template),
-        clone       = document.importNode(t.content, true),
-        destination = document.querySelector(destination);
+        clone       = document.importNode(t.content, true);
 
     destination.setAttribute("aria-busy", "true");
     destination.appendChild(clone);

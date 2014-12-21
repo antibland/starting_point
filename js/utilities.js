@@ -1,4 +1,5 @@
 var utilities = (function() {
+  "use strict";
   function whichAnimationEvent() {
     var a,
         el = document.createElement('fakeelement'),
@@ -41,5 +42,5 @@ var utilities = (function() {
     whichAnimationEvent  : whichAnimationEvent,
     whichTransitionEvent : whichTransitionEvent,
     isTouchDevice        : isTouchDevice
-  }
+  };
 })();
