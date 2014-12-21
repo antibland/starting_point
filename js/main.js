@@ -68,32 +68,36 @@ var main = (function() {
   }
 
   function backToTop() {
-    var pos_from_top = window.scrollY;
+    var pos_from_top = window.scrollY,
+        scrollEndHandler,
+        removeListener;
 
-    function scrollEndHandler() {
-      removeListener();
-      container.removeAttribute("style");
-      window.scrollTo(0, 0);
-      body.classList.remove('body-scrolling');
-    }
+    if (pos_from_top > 0) {
+      scrollEndHandler = function() {
+        removeListener();
+        container.removeAttribute("style");
+        window.scrollTo(0, 0);
+        body.classList.remove('body-scrolling');
+      };
 
-    function removeListener() {
-      container.removeEventListener(transitionend, scrollEndHandler);
-    }
+      removeListener = function() {
+        container.removeEventListener(transitionend, scrollEndHandler);
+      };
 
-    body.classList.add('body-scrolling');
+      body.classList.add('body-scrolling');
 
-    container.style.overflowY = "scroll";
-    window.scrollTop = 0;
+      container.style.overflowY = "scroll";
+      window.scrollTop = 0;
 
-    container.style.webkitTransition = 'all .5s ease-out';
-    container.style.transition = 'all .5s ease-out';
+      container.style.webkitTransition = 'all .5s ease-out';
+      container.style.transition = 'all .5s ease-out';
 
-    container.style.webkitTransform = "translateY(" + pos_from_top + "px)";
-    container.style.transform = "translateY(" + pos_from_top + "px)";
+      container.style.webkitTransform = "translateY(" + pos_from_top + "px)";
+      container.style.transform = "translateY(" + pos_from_top + "px)";
 
-    if (transitionend) {
-      container.addEventListener(transitionend, scrollEndHandler, false);
+      if (transitionend) {
+        container.addEventListener(transitionend, scrollEndHandler, false);
+      }
     }
   }
 
