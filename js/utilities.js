@@ -1,5 +1,6 @@
 var utilities = (function() {
   "use strict";
+
   function whichAnimationEvent() {
     var a,
         el = document.createElement('fakeelement'),
