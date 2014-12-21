@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
   <title>Start</title>
-  <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body class="home">
 
@@ -93,6 +92,19 @@
 
   <button class="basic" tabindex="0" id="back-to-top" value="back to top"></button>
 
+  <script>
+    var cb = function() {
+      var l, h;
+      l = document.createElement('link'); l.rel = 'stylesheet';
+      l.href = 'stylesheets/main.css';
+      h = document.getElementsByTagName('head')[0];
+      h.parentNode.insertBefore(l, h);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(cb);
+    else window.addEventListener('load', cb);
+  </script>
   <script src="dist/starting-point.min.js"></script>
   <script>
     main.init();
