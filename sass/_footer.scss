@@ -1,0 +1,24 @@
+footer {
+  margin: 0 0 2em;
+  padding: 0 1em;
+
+  ul, p {
+    text-align: center;
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 2em;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
