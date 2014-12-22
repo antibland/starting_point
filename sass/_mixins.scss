@@ -139,6 +139,7 @@
   &.basic {
     @include box-shadow(none);
     @include text-shadow(none);
+    background-color: transparent;
     border: none;
     color: #333;
     min-width: 0;

@@ -3,58 +3,57 @@ body.menu-open {
 }
 
 #toggle-menu {
-  @include box-shadow(none);
-  @include text-shadow(none);
-  border: none;
-  color: #333;
-  min-width: 0;
-  margin: 0;
-  background: url(../assets/menu.svg) 0 0 transparent no-repeat;
-  width: 30px;
-  height: 25px;
-  @include background-size(30px 25px);
+  @include border-radius($border-radius);
   position: absolute;
   right: 0.75em;
   top: 0.75em;
-  text-indent: -9999px;
+  padding: 0.55em 0.55em 0.38em;
+  background-color: rgba(255,255,255,0.5);
   z-index: 110;
-  padding: 1.25em;
-  background-color: rgba(255, 255, 255, 0.5);
-  background-position: 50% 50%;
+  cursor: pointer;
 
-  &:active {
-    @include transform(none);
-  }
+  .icon {
+    @include transition(0.3s);
+    width: $toggle-icon-width;
+    height: $toggle-icon-height;
 
-  &:before {
-    background-image: none;
+    .menu-open & {
+      fill: $antique-white;
+    }
   }
 }
 
 #navigation-header {
-  background: url(../assets/icedcream.svg) 0 45% transparent no-repeat;
-  padding-left: 38px;
   margin: 0.5em 0 0.5em 0.5em;
   display: inline-block;
-  @include background-size(20px 28px);
+  padding-left: 38px;
+  position: relative;
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    margin-top: -16px;
+    left: 0;
+  }
 }
 
 #back-to-top {
-  @include transition(0.3s opacity);
-  @include opacity(1);
-  background: url(../assets/arrow_up.svg) 0 0 transparent no-repeat;
-  width: 44px;
-  height: 44px;
-  display: inline-block;
-  @include background-size(44px 44px);
   position: fixed;
   bottom: 3em;
   right: 1em;
 
-  .menu-open &,
-  .body-scrolling & {
-    opacity: 0;
-    pointer-events: none;
+  .icon {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    @include transition(0.3s opacity);
+    @include opacity(1);
+
+    .menu-open &,
+    .body-scrolling & {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 }
 
@@ -90,13 +89,25 @@ nav {
     display: table-cell;
     padding: 0.5em 0;
     text-align: center;
+    position: relative;
+  }
+
+  .icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 11px;
+    top: 50%;
+    margin-top: -9px;
+    pointer-events: none;
   }
 
   .nav-link {
+    text-align: left;
     background-color: rgba($antique-white, 0.2);
     color: $antique-white !important;
     display: block;
-    padding: 0.25em 1em;
+    padding: 0.25em 0.5em 0.25em 2em;
     text-decoration: none;
 
     &:hover,

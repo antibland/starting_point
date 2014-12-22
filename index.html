@@ -3,24 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
-  <title>Start</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Starting Point</title>
   <link rel="stylesheet" href="stylesheets/main.css">
+  <script src="js/vendor/svg4everybody.min.js"></script>
 </head>
 <body class="home">
 
   <div class="container">
 
-    <button class="basic" tabindex="0" id="toggle-menu" value="toggle menu"></button>
+    <button class="basic" id="toggle-menu" value="toggle menu">
+      <svg class="icon">
+        <use xlink:href="dist/dist.svg#shape-menu" />
+      </svg>
+    </button>
 
     <nav tabindex="-1" aria-hidden="true" role="navigation" aria-label="Sidebar navigation">
-      <h2 tabindex="0" id="navigation-header">Sections</h2>
+      <h2 tabindex="0" id="navigation-header">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="dist/dist.svg#shape-lightbulb" />
+        </svg>
+        Sections
+      </h2>
       <div class="nav-list-wrapper">
         <ul aria-labelledby="navigation-header">
-          <li><a class="nav-link" href="#headers-header">Headers</a></li>
-          <li><a class="nav-link" href="#p-header">Paragraphs</a></li>
-          <li><a class="nav-link" href="#img-header">Images</a></li>
-          <li><a class="nav-link" href="#video-header">Videos</a></li>
-          <li><a class="nav-link" href="#forms-header">Forms</a></li>
+          <li>
+            <a class="nav-link" href="#headers-header">Headers</a>
+           <svg class="icon" aria-hidden="true">
+              <use xlink:href="dist/dist.svg#shape-headers" />
+            </svg>
+          </li>
+          <li>
+            <a class="nav-link" href="#p-header">Paragraphs</a>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="dist/dist.svg#shape-paragraphs" />
+            </svg>
+          </li>
+          <li>
+            <a class="nav-link" href="#img-header">Images</a>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="dist/dist.svg#shape-images" />
+            </svg>
+          </li>
+          <li>
+            <a class="nav-link" href="#video-header">Videos</a>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="dist/dist.svg#shape-videos" />
+            </svg>
+          </li>
+          <li>
+            <a class="nav-link" href="#forms-header">Forms</a>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="dist/dist.svg#shape-forms" />
+            </svg>
+          </li>
         </ul>
       </div>
     </nav>
@@ -59,21 +95,21 @@
           <section role="region" aria-labelledby="video-header">
             <h2 id="video-header" class="section-header">Videos</h2>
             <div class="video-container">
-              <iframe src="http://www.youtube.com/embed/Moq_it9Vnz8" frameborder="0"></iframe>
+              <iframe src="http://www.youtube.com/embed/Moq_it9Vnz8" title="sample video"></iframe>
             </div>
           </section>
 
           <section role="region" aria-labelledby="forms-header">
             <h2 id="forms-header" class="section-header">Forms</h2>
             <section>
-              <form action="" method="post" aria-labelledby="register-form-title">
+              <form action="/" method="post" aria-labelledby="register-form-title">
                 <h2 id="register-form-title">Register</h2>
                 <label data-required="true" for="email">email</label>
-                <input autocorrect="off" autocapitalize="off" type="email" id="email" name="email" required aria-required="true" placeholder="email">
+                <input autocorrect="off" autocapitalize="off" type="email" id="email" name="email" required placeholder="email">
                 <label data-required="true" for="password">password</label>
-                <input type="password" id="password" name="password" required aria-required="true" placeholder="password">
+                <input type="password" id="password" name="password" required placeholder="password">
                 <p class="terms">
-                  <input type="checkbox" name="terms" id="terms" required aria-required="true">
+                  <input type="checkbox" name="terms" id="terms" required>
                   <label for="terms">I accept the <a href="#">Terms of Use</a></label>
                 </p>
                 <div class="center">
@@ -91,7 +127,11 @@
     </div>
   </div>
 
-  <button class="basic" tabindex="0" id="back-to-top" value="back to top"></button>
+  <button class="basic" id="back-to-top" value="back to top">
+    <svg class="icon">
+      <use xlink:href="dist/dist.svg#shape-arrow-up" />
+    </svg>
+  </button>
 
   <script src="dist/starting-point.min.js"></script>
   <script>

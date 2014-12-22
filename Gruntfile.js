@@ -22,7 +22,22 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'js/**/*.js']
+      files: ['Gruntfile.js', 'js/*.js']
+    },
+    svgstore: {
+      options: {
+        prefix : 'shape-',
+        svg: {
+          style: 'display: none;',
+          viewBox : '0 0 100 100',
+          xmlns: 'http://www.w3.org/2000/svg'
+        }
+      },
+      your_target: {
+        files: {
+          'dist/dist.svg': ['svg/*.svg'],
+        }
+      },
     },
     watch: {
       files: ['<%= jshint.files %>'],
@@ -36,6 +51,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.loadNpmTasks('grunt-svgstore');
+
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'svgstore']);
 
 };
