@@ -90,15 +90,15 @@ nav {
     padding: 0.5em 0;
     text-align: center;
     position: relative;
+    white-space: nowrap;
   }
 
   .icon {
-    position: absolute;
+    position: relative;
+    top: 2px;
     width: 18px;
     height: 18px;
-    left: 11px;
-    top: 50%;
-    margin-top: -9px;
+    margin-right: 5px;
     pointer-events: none;
   }
 
@@ -107,7 +107,7 @@ nav {
     background-color: rgba($antique-white, 0.2);
     color: $antique-white !important;
     display: block;
-    padding: 0.25em 0.5em 0.25em 2em;
+    padding: 0.25em 0.5em;
     text-decoration: none;
 
     &:hover,
