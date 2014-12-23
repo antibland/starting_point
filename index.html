@@ -12,13 +12,18 @@
 
   <div class="container">
 
-    <button class="basic" id="toggle-menu" value="toggle menu">
+    <button aria-controls="toggle-nav" class="basic" id="toggle-menu" value="toggle menu">
       <svg class="icon">
         <use xlink:href="dist/dist.svg#shape-menu" />
       </svg>
     </button>
 
-    <nav tabindex="-1" aria-hidden="true" role="navigation" aria-label="Sidebar navigation">
+    <nav
+      id="toggle-nav"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-label="Sidebar navigation"
+      role="navigation">
       <h2 tabindex="0" id="navigation-header">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="dist/dist.svg#shape-lightbulb" />
