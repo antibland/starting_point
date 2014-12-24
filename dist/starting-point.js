@@ -115,7 +115,7 @@ var utilities = (function() {
   }
 
   function backToTop() {
-    var pos_from_top = window.scrollY,
+    var pos_from_top = window.pageYOffset,
         scrollEndHandler,
         removeListener;
 
