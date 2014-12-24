@@ -81,6 +81,10 @@ nav {
     overflow-x: scroll;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+
+    .ie9 & {
+      overflow-x: auto;
+    }
   }
 
   ul {
