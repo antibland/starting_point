@@ -40,8 +40,14 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'concat', 'uglify']
+      js: {
+        files: ['<%= jshint.files %>'],
+        tasks: ['jshint', 'concat', 'uglify']
+      },
+      svg: {
+        files: ['svg/*.svg'],
+        tasks: ['svgstore']
+      }
     }
   });
 
