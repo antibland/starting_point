@@ -82,7 +82,7 @@ nav {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 
-    .ie9 & {
+    .no-touch & {
       overflow-x: auto;
     }
   }
