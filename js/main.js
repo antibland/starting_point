@@ -73,30 +73,35 @@ var main = (function() {
         removeListener;
 
     if (pos_from_top > 0) {
-      scrollEndHandler = function() {
-        removeListener();
-        container.removeAttribute("style");
+
+      if (document.querySelector("html").classList.contains("csstransforms3d")) {
+        scrollEndHandler = function() {
+          removeListener();
+          container.removeAttribute("style");
+          window.scrollTo(0, 0);
+          body.classList.remove('body-scrolling');
+        };
+
+        removeListener = function() {
+          container.removeEventListener(transitionend, scrollEndHandler);
+        };
+
+        body.classList.add('body-scrolling');
+
+        container.style.overflowY = "scroll";
+        window.scrollTop = 0;
+
+        container.style.webkitTransition = 'all .5s ease-out';
+        container.style.transition = 'all .5s ease-out';
+
+        container.style.webkitTransform = "translateY(" + pos_from_top + "px)";
+        container.style.transform = "translateY(" + pos_from_top + "px)";
+
+        if (transitionend) {
+          container.addEventListener(transitionend, scrollEndHandler, false);
+        }
+      } else {
         window.scrollTo(0, 0);
-        body.classList.remove('body-scrolling');
-      };
-
-      removeListener = function() {
-        container.removeEventListener(transitionend, scrollEndHandler);
-      };
-
-      body.classList.add('body-scrolling');
-
-      container.style.overflowY = "scroll";
-      window.scrollTop = 0;
-
-      container.style.webkitTransition = 'all .5s ease-out';
-      container.style.transition = 'all .5s ease-out';
-
-      container.style.webkitTransform = "translateY(" + pos_from_top + "px)";
-      container.style.transform = "translateY(" + pos_from_top + "px)";
-
-      if (transitionend) {
-        container.addEventListener(transitionend, scrollEndHandler, false);
       }
     }
   }

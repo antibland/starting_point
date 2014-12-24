@@ -155,6 +155,10 @@ nav {
   .menu-open & {
     @include transform(translate3d(0, $mobile-nav-size, 0));
 
+    .no-csstransforms3d & {
+      top: $mobile-nav-size;
+    }
+
     &:before {
       @include transition(opacity 0.5s);
       @include opacity(1);
