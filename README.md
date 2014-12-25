@@ -92,7 +92,7 @@ Immediately, I can reference that sprite in my HTML.
 You can of course tweak the SVG styles from your CSS. Yeah, it's pretty easy.
 
 ###JavaScript Linting###
-All JavaScript in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep me my code from getting ugly.
+All JavaScript in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep my code from getting ugly.
 
 ###Minification###
 The default setting in config.rb tells compass to compress all CSS every time you trigger a save. JavaScript, however, is not included in this process. However, we're covered during a grunt watch. All JavaScript is concatenated and minified each save point.
