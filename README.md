@@ -16,57 +16,60 @@ Establishing a vertical rhythm at the outset of a web project immediately makes 
 ###Responsive Videos and Images###
 
 I like having a padded main content area with 100% wide images that extend beyond the padding to the viewport edges.
+```html
+<main>
+  <!-- A paragraph within the padded walls -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-    <main>
-      <!-- A paragraph within the padded walls -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <!-- This image will hug the viewport walls -->
+  <div class="img-container">
+    <img src="assets/sample.jpg" alt="">
+  </div>
 
-      <!-- This image will hug the viewport walls -->
-      <div class="img-container">
-        <img src="assets/sample.jpg" alt="">
-      </div>
-
-      <!-- Other stuff -->
-    </main>
-
+  <!-- Other stuff -->
+</main>
+```
 ###JavaScript Utilities###
 
 Have you ever wanted something to happen after your CSS transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use **animationend** and **transitionend**.
+```javascript
+whichTransitionEvent /* returns correct vendor prefix */
+```
 
-    whichTransitionEvent /* returns correct vendor prefix */
 You might use it like this:
 
-    var transitionend = utilities.whichTransitionEvent();
+```javascript
+var transitionend = utilities.whichTransitionEvent();
 
-    if (transitionend) { // browser supports transitionend
-      container.addEventListener(transitionend, handler, false);
-    }
-
+if (transitionend) { // browser supports transitionend
+  container.addEventListener(transitionend, handler, false);
+}
+```
 
 Sometimes you want to know when a user is on a touch-supported device.
 
     isTouchDevice
 A useful place for this would be to determine the type of event listener to attach to an element.
+```javascript
+var click_touch = utilities.isTouchDevice() ? "touchstart" : "click",
+    toggle_menu = document.querySelector("#toggle-menu");
 
-    var click_touch = utilities.isTouchDevice() ? "touchstart" : "click",
-        toggle_menu = document.querySelector("#toggle-menu");
-
-    toggle_menu.addEventListener(click_touch, handler);
+toggle_menu.addEventListener(click_touch, handler);
+```
 
 ###Useful Mixins###
-
-    @mixin animation($animate...)
-    @mixin keyframes($animationName)
-    @mixin remove-tap-highlight
-    @mixin input-placeholder
-    @mixin box-size-all
-    @mixin mobile-smooth-scroll
-    @mixin respond-to($breakpoint)
-    @mixin form($custom_args: "")
-    @mixin form-label($font-size: 0.75rem)
-    @mixin transitions-off
-
-There are more in there, but many of these I tend to use over and over across projects.
+```scss
+@mixin animation($animate...)
+@mixin keyframes($animationName)
+@mixin remove-tap-highlight
+@mixin input-placeholder
+@mixin box-size-all
+@mixin mobile-smooth-scroll
+@mixin respond-to($breakpoint)
+@mixin form($custom_args: "")
+@mixin form-label($font-size: 0.75rem)
+@mixin transitions-off
+```
 
 ###Modular CSS Approach###
 
@@ -79,14 +82,13 @@ Starting Point uses [Grunt][4] to handle some useful tasks.
 [svgstore][5] is a lifesaver when it comes to managing SVG icons you wish to include in a sprite sheet. All you have to do is start **grunt watch** from the command line and drag an svg icon into the svg folder. svgstore will bring the svg into a sprite sheet which you can reference in an external file. Say I added an icon to the svg folder with the filename of ribbon.svg.
 
 Immediately, I can reference that sprite in my HTML.
-
-
-    <a href="http://somelink.com">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="dist/dist.svg#shape-ribbon" />
-      </svg>Click the ribbon
-    </a>
-
+```html
+<a href="http://somelink.com">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="dist/dist.svg#shape-ribbon" />
+  </svg>Click the ribbon
+</a>
+```
 You can of course tweak the SVG styles from your CSS. Yeah, it's pretty easy.
 
 ####JavaScript Linting####
