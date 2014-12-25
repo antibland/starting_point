@@ -20,12 +20,12 @@ I like having a padded main content area with 100% wide images that extend beyon
     <main>
       <!-- A paragraph within the padded walls -->
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-   
+
       <!-- This image will hug the viewport walls -->
       <div class="img-container">
         <img src="assets/sample.jpg" alt="">
       </div>
-   
+
       <!-- Other stuff -->
     </main>
 
@@ -37,11 +37,11 @@ Have you ever wanted something to happen after your CSS transition or animation 
 You might use it like this:
 
     var transitionend = utilities.whichTransitionEvent();
-     
+
     if (transitionend) { // browser supports transitionend
       container.addEventListener(transitionend, handler, false);
     }
-    
+
 
 Sometimes you want to know when a user is on a touch-supported device.
 
@@ -49,13 +49,13 @@ Sometimes you want to know when a user is on a touch-supported device.
 A useful place for this would be to determine the type of event listener to attach to an element.
 
     var click_touch = utilities.isTouchDevice() ? "touchstart" : "click",
-        toggle_menu = document.querySelector("#toggle-menu"); 
-     
+        toggle_menu = document.querySelector("#toggle-menu");
+
     toggle_menu.addEventListener(click_touch, handler);
 
 ###Useful Mixins###
 
-    @mixin animation($animate...)    
+    @mixin animation($animate...)
     @mixin keyframes($animationName)
     @mixin remove-tap-highlight
     @mixin input-placeholder
@@ -87,7 +87,7 @@ Immediately, I can reference that sprite in my HTML.
       </svg>Click the ribbon
     </a>
 
-You can of course tweak the SVG styles from your CSS. Yeah, it's pretty easy. 
+You can of course tweak the SVG styles from your CSS. Yeah, it's pretty easy.
 
 ####JavaScript Linting####
 All JavaScript in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep me my code from getting ugly.
@@ -121,9 +121,14 @@ This is a barebones thing I've cobbled together in my free time. It's by no mean
 
 You're cloning the entire [demo][6], which is probably more than you need. If you look in the sass folder, you can remove the files beginning with _custom for a cleaner start. When I get around to it, I'll separate things further.
 
+##License##
+
+[MIT][7]
+
 [1]: http://compass-style.org/
 [2]: http://sass-lang.com/
 [3]: http://www.zell-weekeat.com/compass-vertical-rhythm/
 [4]: http://gruntjs.com/
 [5]: https://github.com/FWeinb/grunt-svgstore
 [6]: http://naayt.github.io/starting_point/
+[7]: https://github.com/naayt/starting_point/blob/gh-pages/LICENSE
