@@ -5,7 +5,7 @@ I created Starting Point because I was tired of staring a new web project and hu
 ##Browser Support##
 I realize that IE8 is not completely dead, but it's dead to me and the clients with whom I choose to do business. One of my favorite reasons to drop IE8 support is so I can avoid employing various polyfills just to make IE8 behave like a semi-decent browser.
 
-So that leaves the following: IE9+, Chrome, Firefox, and Opera, Safari, iOS Safari, Android 4+.
+So that leaves the following: IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
 
 ##What You Get
 
@@ -100,7 +100,7 @@ The default setting in config.rb tells compass to compress all CSS every time yo
 ##Installation##
 
 ```sh
-$ https://github.com/naayt/starting_point.git
+$ git clone https://github.com/naayt/starting_point.git
 ```
 
 ```sh
