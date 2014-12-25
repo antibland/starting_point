@@ -75,10 +75,10 @@ toggle_menu.addEventListener(click_touch, handler);
 
 This just means all the CSS is broken down in partials (footer, animations, common, forms, etc.). These partials tend to make your code much easier to manage as your project grows.
 
-###Useful Grunt Tasks###
+##Useful Grunt Tasks##
 Starting Point uses [Grunt][4] to handle some useful tasks.
 
-####SVG Management####
+###SVG Management###
 [svgstore][5] is a lifesaver when it comes to managing SVG icons you wish to include in a sprite sheet. All you have to do is start **grunt watch** from the command line and drag an svg icon into the svg folder. svgstore will bring the svg into a sprite sheet which you can reference in an external file. Say I added an icon to the svg folder with the filename of ribbon.svg.
 
 Immediately, I can reference that sprite in my HTML.
@@ -91,10 +91,10 @@ Immediately, I can reference that sprite in my HTML.
 ```
 You can of course tweak the SVG styles from your CSS. Yeah, it's pretty easy.
 
-####JavaScript Linting####
+###JavaScript Linting###
 All JavaScript in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep me my code from getting ugly.
 
-####Minification####
+###Minification###
 The default setting in config.rb tells compass to compress all CSS every time you trigger a save. JavaScript, however, is not included in this process. However, we're covered during a grunt watch. All JavaScript is concatenated and minified each save point.
 
 ##Installation##
