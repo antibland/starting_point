@@ -36,7 +36,7 @@ var utilities = (function() {
   }
 
   function isTouchDevice() {
-    return 'ontouchstart' in document.documentElement;
+    return document.querySelector("html").classList.contains('touch');
   }
 
   return {
