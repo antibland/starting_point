@@ -11,7 +11,7 @@ So that leaves the following: IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, 
 
 ###Vertical Rhythm###
 
-Establishing a vertical rhythm at the outset of a web project immediately makes every bit of subsequent HTML more readable. Compass makes this pretty easy to set up and a good tutorial exists [here][3].
+Establishing a vertical rhythm at the outset of a web project makes your content much easier to consume. Compass makes this pretty easy to set up and you can read more about vertical rhythm [here][3].
 
 ###Responsive Videos and Images###
 
@@ -19,7 +19,7 @@ I like having a padded main content area with 100% wide images that extend beyon
 ```html
 <main>
   <!-- A paragraph within the padded walls -->
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p>Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. </p>
 
   <!-- This image will hug the viewport walls -->
   <div class="img-container">
@@ -29,6 +29,8 @@ I like having a padded main content area with 100% wide images that extend beyon
   <!-- Other stuff -->
 </main>
 ```
+![full width image](https://dl.dropboxusercontent.com/u/24799515/img_share/full_width_image.jpg)
+
 ###JavaScript Utilities###
 
 Have you ever wanted something to happen after your CSS transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use **animationend** and **transitionend**.
@@ -107,7 +109,11 @@ $ git clone https://github.com/naayt/starting_point.git
 $ npm install
 ```
 
-After you have the necessary modules, you'll need to run Starting Point on a server. It will work as simply a local file, but accessing the SVGs in an external file have Chrome up in arms. The easiest way to start a server on a Mac is this:
+```sh
+$ grunt watch
+```
+
+After you have the necessary modules, you'll need to run Starting Point on a server. It will work serving a local HTML index file, but accessing the SVGs in an external file cause Chrome to throw security permission errors and serve no icons. From a Mac, the easiest way to work around this is to start a simple web server:
 
 ```sh
 $ python -m SimpleHTTPServer 8000
