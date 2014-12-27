@@ -11,9 +11,34 @@ var main = (function() {
       content_pusher = document.querySelector(".content-pusher"),
       back_to_top    = document.querySelector("#back-to-top");
 
-  function init() {
-    bindings();
-  }
+  var ret = {
+    init: function() {
+      bindings();
+    },
+
+    chain: function(obj) {
+      var waiting_for = document.querySelector(obj.waiting_for),
+          next_up     = document.querySelector(obj.next_up),
+          apply       = obj.apply;
+
+      function applyClass() {
+        next_up.classList.add(apply);
+      }
+
+      if (transitionend) {
+        waiting_for.addEventListener(transitionend, applyClass, false);
+      }
+    },
+
+    loadTemplate: function(template, destination) {
+      var t           = document.querySelector(template),
+          clone       = document.importNode(t.content, true);
+
+      destination.setAttribute("aria-busy", "true");
+      destination.appendChild(clone);
+      destination.setAttribute("aria-busy", "false");
+    }
+  };
 
   function loaded() {
     body.setAttribute("aria-busy", "false");
@@ -130,33 +155,6 @@ var main = (function() {
     document.addEventListener("touchstart", function(){}, true);
   }
 
-  function chain(obj) {
-    var waiting_for = document.querySelector(obj.waiting_for),
-        next_up     = document.querySelector(obj.next_up),
-        apply       = obj.apply;
-
-    function applyClass() {
-      next_up.classList.add(apply);
-    }
-
-    if (transitionend) {
-      waiting_for.addEventListener(transitionend, applyClass, false);
-    }
-  }
-
-  function loadTemplate(template, destination) {
-    var t           = document.querySelector(template),
-        clone       = document.importNode(t.content, true);
-
-    destination.setAttribute("aria-busy", "true");
-    destination.appendChild(clone);
-    destination.setAttribute("aria-busy", "false");
-  }
-
-  return {
-    init: init,
-    chain: chain,
-    loadTemplate: loadTemplate
-  };
+  return ret;
 
 })();
