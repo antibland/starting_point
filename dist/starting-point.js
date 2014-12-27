@@ -44,27 +44,6 @@
 
     isTouchDevice: function() {
       return document.querySelector("html").classList.contains('touch');
-    }
-  };
-
-  return ret;
-})();
-;var main = (function() {
-  "use strict";
-
-  var transitionend  = utilities.whichTransitionEvent(),
-      animationend   = utilities.whichAnimationEvent(),
-      click_touch    = utilities.isTouchDevice() ? "touchstart" : "click",
-      main           = document.querySelector("main"),
-      body           = document.querySelector("body"),
-      container      = document.querySelector(".container"),
-      nav            = document.querySelector("[role=navigation]"),
-      content_pusher = document.querySelector(".content-pusher"),
-      back_to_top    = document.querySelector("#back-to-top");
-
-  var ret = {
-    init: function() {
-      bindings();
     },
 
     chain: function(obj) {
@@ -82,12 +61,57 @@
     },
 
     loadTemplate: function(template, destination) {
-      var t           = document.querySelector(template),
-          clone       = document.importNode(t.content, true);
+      var t     = document.querySelector(template),
+          clone = document.importNode(t.content, true);
 
       destination.setAttribute("aria-busy", "true");
       destination.appendChild(clone);
       destination.setAttribute("aria-busy", "false");
+    },
+
+    preventDefault: function(e) {
+      if (e.preventDefault()) {
+        e.preventDefault();
+      } else {
+        return false;
+      }
+    }
+  };
+
+  return ret;
+})();
+;var main = (function() {
+  "use strict";
+
+  var ret = {
+    init: function() {
+      bindings();
+    }
+  };
+
+  function bindings() {
+    document.addEventListener("touchstart", function(){}, true);
+  }
+
+  return ret;
+
+})();
+;var demo = (function() {
+  "use strict";
+
+  var transitionend  = utilities.whichTransitionEvent(),
+      animationend   = utilities.whichAnimationEvent(),
+      click_touch    = utilities.isTouchDevice() ? "touchstart" : "click",
+      body           = document.querySelector("body"),
+      container      = document.querySelector(".container"),
+      nav            = document.querySelector("[role=navigation]"),
+      content_pusher = document.querySelector(".content-pusher"),
+      back_to_top    = document.querySelector("#back-to-top"),
+      ret;
+
+  ret = {
+    init: function() {
+      bindings();
     }
   };
 
@@ -109,22 +133,14 @@
     });
   }
 
-  function preventDefault(e) {
-    if (e.preventDefault()) {
-      e.preventDefault();
-    } else {
-      return false;
-    }
-  }
-
   function disableMobileScrolling() {
-    content_pusher.addEventListener("touchstart", preventDefault);
-    content_pusher.addEventListener("touchmove", preventDefault);
+    content_pusher.addEventListener("touchstart", utilities.preventDefault);
+    content_pusher.addEventListener("touchmove", utilities.preventDefault);
   }
 
   function enableMobileScrolling() {
-    content_pusher.removeEventListener("touchstart", preventDefault);
-    content_pusher.removeEventListener("touchmove", preventDefault);
+    content_pusher.removeEventListener("touchstart", utilities.preventDefault);
+    content_pusher.removeEventListener("touchmove", utilities.preventDefault);
   }
 
   function toggleMenu() {
@@ -202,8 +218,6 @@
         closeMenu();
       }
     };
-
-    document.addEventListener("touchstart", function(){}, true);
   }
 
   return ret;

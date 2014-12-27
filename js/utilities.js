@@ -38,6 +38,37 @@ var utilities = (function() {
 
     isTouchDevice: function() {
       return document.querySelector("html").classList.contains('touch');
+    },
+
+    chain: function(obj) {
+      var waiting_for = document.querySelector(obj.waiting_for),
+          next_up     = document.querySelector(obj.next_up),
+          apply       = obj.apply;
+
+      function applyClass() {
+        next_up.classList.add(apply);
+      }
+
+      if (transitionend) {
+        waiting_for.addEventListener(transitionend, applyClass, false);
+      }
+    },
+
+    loadTemplate: function(template, destination) {
+      var t     = document.querySelector(template),
+          clone = document.importNode(t.content, true);
+
+      destination.setAttribute("aria-busy", "true");
+      destination.appendChild(clone);
+      destination.setAttribute("aria-busy", "false");
+    },
+
+    preventDefault: function(e) {
+      if (e.preventDefault()) {
+        e.preventDefault();
+      } else {
+        return false;
+      }
     }
   };
 
