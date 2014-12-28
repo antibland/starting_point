@@ -62,7 +62,6 @@
 
 @mixin blur($value: 4px) {
   -webkit-filter: blur($value);
-  -moz-filter: blur($value);
   -o-filter: blur($value);
   -ms-filter: blur($value);
   filter: blur($value);
