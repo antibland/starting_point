@@ -37,9 +37,9 @@ I like having a padded main content area with 100% wide images that extend beyon
   <!-- Other stuff -->
 </main>
 ```
-<div style="text-align:center; width: 100%;">
+
 ![full width image](https://dl.dropboxusercontent.com/u/24799515/img_share/full_width_image.jpg)
-</div>
+
 ###JavaScript Utilities###
 
 Have you ever wanted something to happen after your CSS transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use **animationend** and **transitionend**.
