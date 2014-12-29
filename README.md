@@ -37,8 +37,9 @@ I like having a padded main content area with 100% wide images that extend beyon
   <!-- Other stuff -->
 </main>
 ```
-
-![full width image](https://dl.dropboxusercontent.com/u/24799515/img_share/full_width_image.jpg)
+<div style="text-align:center;width:100%;">
+  <img src="https://dl.dropboxusercontent.com/u/24799515/img_share/full_width_image.jpg" alt="">
+</div>
 
 ###JavaScript Utilities###
 
