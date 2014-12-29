@@ -163,7 +163,6 @@ nav {
   .menu-open & {
     @include blur;
     @include transform(translate3d(0, $mobile-nav-size, 0));
-    pointer-events: none;
 
     .no-csstransforms3d & {
       top: $mobile-nav-size;
