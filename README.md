@@ -1,6 +1,6 @@
 #Starting Point
 
-We've all been there at some point. You're coding something and an inner voice tell us, "This should be its own thing. Don't forget to pull this code out and make it its own thing." But you're busy and you don't do it. Six months later, while working on a new project, you can't find that useful utility you once wrote. So you write it again. And again. Let's stop recreating our greatest hits over and over. 
+We've all been there at some point. You're coding something and an inner voice announces, "This should be its own thing. Don't forget to pull this code out and make it its own thing." But you're busy and you don't do it. Six months later, while working on a new project, you can't find that useful utility you once wrote. So you write it again. And again. Let's stop recreating our greatest hits over and over. 
 
 To me, greatest hits means:
 
