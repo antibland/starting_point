@@ -1,13 +1,21 @@
 #Starting Point
 
-I created Starting Point because I was tired of staring a new web project and hunting down my greatest hits from various other projects. For the near future, whatever I build will have a certain set of shared needs.
+We've all been there at some point. You're coding something and an inner voice tell us, "This should be its own thing. Don't forget to pull this code out and make it its own thing." But you're busy and you don't do it. Six months later, while working on a new project, you can't find that useful utility you once wrote. So you write it again. And again. Let's stop recreating our greatest hits over and over. 
+
+To me, greatest hits means:
+
+1. Clean, readable HTML
+2. Reusable sass mixins and placeholders
+3. A small, maintainable, vanila JavaScript library using the [module pattern][8]
+4. Auto minification/concatenation/linting
+5. An easy SVG workflow
 
 ##Browser Support##
-I realize that IE8 is not completely dead, but it's dead to me and the clients with whom I choose to do business. One of my favorite reasons to drop IE8 support is so I can avoid employing various polyfills just to make IE8 behave like a semi-decent browser.
+I realize that IE8 is not completely dead, but it's dead to me and the clients with whom I choose to do business. One of my favorite reasons to drop IE8 support is so I can avoid employing various polyfills simply to make IE8 behave like a semi-decent browser.
 
 So that leaves the following: IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
 
-##What You Get
+##What's In Here?
 
 ###Vertical Rhythm###
 
@@ -127,7 +135,7 @@ This is a barebones thing I've cobbled together in my free time. It's by no mean
 
 ##Notes##
 
-You're cloning the entire [demo][6], which is probably more than you need. If you look in the sass folder, you can remove the files beginning with _custom for a cleaner start. When I get around to it, I'll separate things further.
+You're cloning the entire [demo][6], which is probably more than you need. If you look in the sass folder, you can remove the files beginning with _custom for a cleaner start and the call to demo.init() at the bottom of index.html.
 
 ##License##
 
@@ -140,3 +148,4 @@ You're cloning the entire [demo][6], which is probably more than you need. If yo
 [5]: https://github.com/FWeinb/grunt-svgstore
 [6]: http://naayt.github.io/starting_point/
 [7]: https://github.com/naayt/starting_point/blob/gh-pages/LICENSE
+[8]: http://goo.gl/f5LZm
