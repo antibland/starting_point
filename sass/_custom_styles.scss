@@ -16,3 +16,13 @@ main {
     margin-left: -50%;
   }
 }
+
+header {
+  .icon {
+    margin: rhythm(1) auto 0;
+    text-align: center;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+  }
+}
