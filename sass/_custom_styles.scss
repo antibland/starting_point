@@ -35,6 +35,6 @@ header {
   z-index: 100;
 
   .menu-open & {
-    z-index: 0;
+    display: none;
   }
 }
