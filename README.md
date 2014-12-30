@@ -11,9 +11,7 @@ To me, greatest hits means:
 5. An easy SVG workflow
 
 ##Browser Support##
-I realize that IE8 is not completely dead, but it's dead to me and the clients with whom I choose to do business. One of my favorite reasons to drop IE8 support is so I can avoid employing various polyfills simply to make IE8 behave like a semi-decent browser.
-
-So that leaves the following: IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
+IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
 
 ##What's In Here?
 
