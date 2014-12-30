@@ -121,6 +121,10 @@ $ npm install
 $ grunt watch
 ```
 
+```sh
+$ compass watch
+```
+
 After you have the necessary modules, you'll need to run Starting Point on a server. It will work serving a local HTML index file, but accessing the SVGs in an external file cause Chrome to throw security permission errors and serve no icons. From a Mac, the easiest way to work around this is to start a simple web server:
 
 ```sh
