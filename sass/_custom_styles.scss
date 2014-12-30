@@ -26,3 +26,15 @@ header {
     height: 5rem;
   }
 }
+
+#fork-me {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: 100;
+
+  .menu-open & {
+    z-index: 0;
+  }
+}
