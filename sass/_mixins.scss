@@ -216,13 +216,13 @@
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "small" {
-    @media (min-width: 767px) {
+    @media (min-width: 580px) {
       @content;
     }
   }
 
   @else if $breakpoint == "medium" {
-    @media (min-width: 992px) {
+    @media (min-width: 800px) {
       @content;
     }
   }
