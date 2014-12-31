@@ -18,7 +18,9 @@ var demo = (function() {
   };
 
   function loaded() {
-    body.setAttribute("aria-busy", "false");
+    setTimeout(function() {
+      body.setAttribute("aria-busy", "false");
+    }, 100);
   }
 
   function closeMenu(transitions_off) {
