@@ -164,7 +164,7 @@ Then just go to localhost:8000 and you should be in business.
 
 ##Contributing##
 
-This is a barebones thing I've cobbled together in my free time. It's by no means complete in my mind. If you have any ideas to make Starting Point better, I'd love to work with you.
+This is a barebones thing I've cobbled together in my spare time and is by no means complete. If you have any ideas to make Starting Point better, I'd love to work with you.
 
 ##Notes##
 
