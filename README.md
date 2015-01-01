@@ -118,6 +118,34 @@ $ git clone https://github.com/naayt/starting_point.git
 $ npm install
 ```
 
+This is an optional step. However, if you test your JavaScript (or want to start), definitely proceed with this step.
+```sh
+$ bower install jquery jasmine-jquery --save-dev
+```
+
+After these files are downloaded, you'll need to include them in your Gruntfile.js
+```javascript
+jasmine: {
+  src: 'dist/starting-point.js',
+  options: {
+    vendor: [
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/jasmine-jquery/lib/jasmine-jquery.js'
+    ],
+    specs: 'spec/**/*.js'
+  }
+}
+```
+
+You'll then be able to run tests headlessly with the following command:
+```sh
+$ grunt jasmine
+```
+If you're running the tests in the demo, you should see something like this:
+<p align="center">
+  <img src="https://dl.dropboxusercontent.com/u/24799515/img_share/grunt_jasmine_tests.png">
+</p>
+
 ```sh
 $ grunt watch
 ```
