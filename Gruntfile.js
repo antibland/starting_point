@@ -39,6 +39,16 @@ module.exports = function(grunt) {
         }
       },
     },
+    jasmine: {
+      src: 'dist/starting-point.js',
+      options: {
+        vendor: [
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/jasmine-jquery/lib/jasmine-jquery.js'
+        ],
+        specs: 'spec/**/*.js'
+      }
+    },
     watch: {
       js: {
         files: ['<%= jshint.files %>'],
@@ -58,6 +68,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.loadNpmTasks('grunt-svgstore');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'svgstore']);
 
