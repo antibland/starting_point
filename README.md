@@ -9,6 +9,7 @@ To me, greatest hits means:
 3. A small, maintainable, vanila JavaScript library using the [module pattern][8]
 4. Auto minification/concatenation/linting
 5. An easy SVG workflow
+6. Testable JavaScript using Jasmine
 
 ##Browser Support##
 IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
