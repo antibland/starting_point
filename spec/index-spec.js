@@ -5,6 +5,12 @@ describe("index", function() {
       $toggle_nav,
       $toggle_menu;
 
+  function triggerKeydown(key) {
+     var e = jQuery.Event("keydown");
+    e.keyCode = key;
+    $(document).trigger(e);
+  }
+
   beforeEach(function(){
     loadFixtures("index.html");
     demo.init();
@@ -29,10 +35,8 @@ describe("index", function() {
     });
 
     it("is hidden when escape key is pressed", function() {
-      var e = jQuery.Event("keydown");
-      e.keyCode = ESC;
       demo.toggleMenu();
-      $(document).trigger(e);
+      triggerKeydown(ESC);
       expect($toggle_nav).toHaveAttr("aria-hidden", "true");
     });
   });
