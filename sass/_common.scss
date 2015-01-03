@@ -112,3 +112,11 @@ hr {
 .transitions-off * {
   @include transitions-off;
 }
+
+[hidden] {
+  display: none;
+}
+
+.hide-text {
+  @extend %hide-text;
+}

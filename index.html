@@ -1,7 +1,7 @@
 <!--[if IE]><![endif]-->
 <!DOCTYPE html>
-<!--[if IE 9]><html class="no-js ie9"><![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
@@ -12,7 +12,8 @@
 </head>
 <body class="home">
 
-  <div class="container">
+  <a href="#main-content" class="hide-text">Skip to main content</a>
+  <div class="container" id="top">
 
     <a href="https://github.com/naayt/starting_point">
       <img id="fork-me" src="assets/fork-me.png" alt="Fork me on GitHub">
@@ -90,7 +91,7 @@
         <h1>Starting Point</h1>
       </header>
 
-      <main>
+      <main id="main-content">
         <div class="center">
           <section role="region" aria-labelledby="headers-header">
             <h2 id="headers-header" class="section-header">Headers</h2>
@@ -105,8 +106,8 @@
 
           <section role="region" aria-labelledby="p-header">
             <h2 id="p-header" class="section-header">Paragraphs</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#top">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, consequatur, sit libero delectus <strong>rem earum</strong> aspernatur nam veniam quasi inventore sapiente <a href="#top">sequi recusandae</a> maxime <em>aliquid perspiciatis</em> ut nemo numquam eveniet.</p>
           </section>
 
           <section role="region" aria-labelledby="img-header">
@@ -134,13 +135,13 @@
                 <input type="password" id="password" name="password" required placeholder="password">
                 <p class="terms">
                   <input type="checkbox" name="terms" id="terms" required>
-                  <label for="terms">I accept the <a href="#">Terms of Use</a></label>
+                  <label for="terms">I accept the <a href="#top">Terms of Use</a></label>
                 </p>
                 <div class="center">
                   <input type="submit" value="Register" class="button full-width">
                 </div>
                 <div class="account-direction">
-                  <p>Have an account? <a href="#">Log in</a></p>
+                  <p>Have an account? <a href="#top">Log in</a></p>
                 </div>
               </form>
             </section>
@@ -162,7 +163,8 @@
   <footer role="contentinfo">
     <ul>
       <li>
-        <a href="http://goo.gl/KAVukU" aria-label="HTML 5 validator results">
+        <a href="http://goo.gl/KAVukU">
+          <span class="hide-text">HTML 5 validator results</span>
           <svg class="icon" aria-hidden="true">
             <use xlink:href="dist/dist.svg#shape-html5" />
           </svg>
@@ -174,7 +176,8 @@
         </svg>
       </li>
       <li>
-        <a href="https://github.com/naayt/starting_point" aria-label="Github repository">
+        <a href="https://github.com/naayt/starting_point">
+          <span class="hide-text">Github repository</span>
           <svg class="icon" aria-hidden="true">
             <use xlink:href="dist/dist.svg#shape-github" />
           </svg>
