@@ -11,6 +11,12 @@ describe("index", function() {
     $(document).trigger(e);
   }
 
+  function callFunction(func, num_times) {
+    for (var i = 0; i < num_times; i++) {
+      func.call();
+    }
+  }
+
   beforeEach(function(){
     loadFixtures("index.html");
     demo.init();
@@ -29,8 +35,7 @@ describe("index", function() {
     });
 
     it("is hidden on toggle", function() {
-      demo.toggleMenu();
-      demo.toggleMenu();
+      callFunction(demo.toggleMenu, 2);
       expect($toggle_nav).toHaveAttr("aria-hidden", "true");
     });
 
