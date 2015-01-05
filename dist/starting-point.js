@@ -100,7 +100,7 @@
   "use strict";
 
   var transitionend, animationend, click_touch, body, container,
-      nav, content_pusher, back_to_top, ret;
+      nav, content_pusher, ret;
 
   ret = {
     init: function() {
@@ -111,7 +111,6 @@
       container      = document.querySelector(".container");
       nav            = document.querySelector("[role=navigation]");
       content_pusher = document.querySelector(".content-pusher");
-      back_to_top    = document.querySelector("#back-to-top");
 
       bindings();
     },
@@ -131,10 +130,6 @@
         nav.setAttribute("aria-hidden", "true");
         enableMobileScrolling();
       }
-    },
-
-    backToTop: function() {
-      window.location.href = "#top";
     }
   };
 
@@ -183,7 +178,6 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       toggle_menu.addEventListener(click_touch, demo.toggleMenu, false);
-      back_to_top.addEventListener(click_touch, demo.backToTop, false);
     }, false);
 
     document.onkeydown = function(e) {
