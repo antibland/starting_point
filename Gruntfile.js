@@ -59,6 +59,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    tenon: {
+      options: {
+        key: '9c3374ed17dc0391154b9653a25e6992'
+      },
+
+      all: {
+        src: [
+          'index.html'
+        ]
+      }
+    },
     watch: {
       js: {
         files: ['<%= jshint.files %>'],
@@ -73,14 +84,12 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
-
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
-
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-tenon-client');
 
   grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'svgstore', 'browserSync']);
 
