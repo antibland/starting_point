@@ -49,6 +49,16 @@ module.exports = function(grunt) {
         specs: 'spec/**/*.js'
       }
     },
+    browserSync: {
+      bsFiles: {
+        src : 'stylesheets/main.css'
+      },
+      options: {
+        server: {
+          baseDir: "./"
+        }
+      }
+    },
     watch: {
       js: {
         files: ['<%= jshint.files %>'],
@@ -70,6 +80,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'svgstore']);
+  grunt.loadNpmTasks('grunt-browser-sync');
+
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'svgstore', 'browserSync']);
 
 };
