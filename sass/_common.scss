@@ -120,3 +120,7 @@ hr {
 .hide-text {
   @extend %hide-text;
 }
+
+.call-out {
+  @extend %call-out;
+}

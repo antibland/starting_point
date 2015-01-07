@@ -57,3 +57,20 @@
   height: 1px;
   overflow: hidden;
 }
+
+%call-out {
+  @include transition(0.3s);
+  @include text-shadow(1px 1px 1px lighten($blue, 30%));
+  line-height: rhythm(1.1);
+  margin: 0 auto rhythm(1);
+  font-size: 125%;
+  text-transform: uppercase;
+  font-style: italic;
+  width: 80%;
+  text-align: center;
+
+  @include respond-to(medium) {
+    width: 75%;
+    font-size: 150%;
+  }
+}
