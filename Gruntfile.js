@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     },
     tenon: {
       options: {
-        key: 'your key goes here'
+        key: '33bde273f5a047092f334162b78eecf5'
       },
 
       all: {

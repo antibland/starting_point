@@ -42,9 +42,11 @@ body.menu-open {
 }
 
 #back-to-top {
+  @include remove-tap-highlight;
   position: fixed;
   bottom: 2em;
   right: 1em;
+  z-index: 999;
 
   .icon {
     display: inline-block;
