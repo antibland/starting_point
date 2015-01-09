@@ -42,7 +42,7 @@ I like having a padded main content area with 100% wide images that extend beyon
 
 ###JavaScript Utilities###
 
-Have you ever wanted something to happen after your CSS transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use **animationend** and **transitionend**.
+Have you ever wanted something to happen after your CSS transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use `animationend` and `transitionend`.
 ```javascript
 whichTransitionEvent /* returns correct vendor prefix */
 ```
@@ -161,7 +161,7 @@ After you have the necessary modules, you'll need to run Starting Point on a ser
 $ python -m SimpleHTTPServer 8000
 ```
 
-Then just go to localhost:8000 and you should be in business.
+Then just go to `http://localhost:8000` and you should be in business.
 
 ##Contributing##
 
