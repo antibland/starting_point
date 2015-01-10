@@ -119,7 +119,7 @@ $ git clone https://github.com/naayt/starting_point.git
 $ npm install
 ```
 
-This is an optional step. However, if you test your JavaScript (or want to start), definitely proceed with this step.
+This is an optional step. However, if you unit test your JavaScript (or want to start), definitely proceed with this step.
 ```sh
 $ bower install jquery jasmine-jquery --save-dev
 ```
