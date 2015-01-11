@@ -7,7 +7,7 @@ In no particular order of importance, greatest hits means:
 1. A small, vanila JavaScript library using the [module pattern][8]
 2. Auto minification/concatenation/linting
 3. Reusable sass mixins and placeholders
-4. A no-bullshit SVG workflow
+4. A no-bullshit `SVG` workflow
 5. Testable JavaScript using Jasmine
 
 ##Browser Support##
@@ -41,7 +41,7 @@ I like having a padded main content area with 100% wide images that extend beyon
 
 ###JavaScript Utilities###
 
-Have you ever wanted something to happen after your CSS transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use `animationend` and `transitionend`, both stored in `utilities.js`.
+Have you ever wanted something to happen after your `CSS` transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use `animationend` and `transitionend`, both stored in `utilities.js`.
 ```javascript
 whichTransitionEvent /* returns correct vendor prefix */
 ```
@@ -83,13 +83,13 @@ toggle_menu.addEventListener(click_touch, handler);
 
 ###Modular CSS Approach###
 
-This just means all the CSS is broken down in partials (footer, animations, common, forms, etc.). These partials tend to make your code much easier to manage as your project grows.
+This just means all the `CSS` is broken down in partials (footer, animations, common, forms, etc.). These partials tend to make your code much easier to manage as your project grows.
 
 ##Grunt Tasks##
 Starting Point uses [Grunt][4] to handle some common, yet tedious, tasks.
 
 ###SVG Management###
-[svgstore][5] is a lifesaver when it comes to managing SVG icons you wish to include in a sprite sheet. All you have to do is start **grunt watch** from the command line and drag an svg icon into the svg folder. svgstore will bring the svg into a sprite sheet which you can reference in an external file. Say we add an icon to the svg folder with the filename of `ribbon.svg`.
+[svgstore][5] is a lifesaver when it comes to managing `SVG` icons you wish to include in a sprite sheet. All you have to do is start **grunt watch** from the command line and drag an `SVG` icon into the **svg** directory. svgstore will build the `SVG` into a sprite sheet which you can reference in an external file. Say we add an icon to the `SVG` folder with the filename of `ribbon.svg`.
 
 Immediately, Grunt builds the file into our `SVG` sprite sheet, making it available within our `HTML`.
 ```html
@@ -100,13 +100,13 @@ Immediately, Grunt builds the file into our `SVG` sprite sheet, making it availa
   </svg>
 </a>
 ```
-You can of course tweak the SVG styles from your CSS. Yeah, it's pretty easy.
+You can of course tweak the `SVG` styles from your `CSS`. Yeah, it's pretty easy.
 
 ###JavaScript Linting###
 All JavaScript in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep my code from getting ugly.
 
 ###Minification###
-The default setting in config.rb tells compass to compress all CSS every time you trigger a save. JavaScript, however, is not included in this process. However, we're covered during a grunt watch. All JavaScript is concatenated and minified each save point.
+The default setting in config.rb tells compass to compress all `CSS` every time you trigger a save. JavaScript, however, is not included in this process. However, we're covered during a grunt watch. All JavaScript is concatenated and minified each save point.
 
 ##Installation##
 
@@ -154,7 +154,7 @@ $ grunt watch
 $ compass watch
 ```
 
-After you have the necessary modules, you'll need to run Starting Point on a server. It will work serving a local HTML index file, but accessing the SVGs in an external file cause Chrome to throw security permission errors and serve no icons. From a Mac, the easiest way to work around this is to start a simple web server:
+After you have the necessary modules, you'll need to run Starting Point on a server. It will work serving a local `HTML` index file, but accessing the SVGs in an external file cause Chrome to throw security permission errors and serve no icons. From a Mac, the easiest way to work around this is to start a simple web server:
 
 ```sh
 $ python -m SimpleHTTPServer 8000
@@ -168,7 +168,7 @@ This is a barebones thing I've cobbled together in my spare time and is by no me
 
 ##Notes##
 
-You're cloning the entire [demo][6], which is probably more than you need. If you look in the sass folder, you can remove the files beginning with _custom for a cleaner start and the call to demo.init() at the bottom of index.html.
+You're cloning the entire [demo][6], which is probably more than you need. If you look in the sass folder, you can remove the files beginning with _custom for a cleaner start and the call to demo.init() at the bottom of `index.html`.
 
 ##License##
 
