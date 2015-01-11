@@ -85,13 +85,13 @@ toggle_menu.addEventListener(click_touch, handler);
 
 This just means all the CSS is broken down in partials (footer, animations, common, forms, etc.). These partials tend to make your code much easier to manage as your project grows.
 
-##Useful Grunt Tasks##
-Starting Point uses [Grunt][4] to handle some useful tasks.
+##Grunt Tasks##
+Starting Point uses [Grunt][4] to handle some common, yet tedious, tasks.
 
 ###SVG Management###
-[svgstore][5] is a lifesaver when it comes to managing SVG icons you wish to include in a sprite sheet. All you have to do is start **grunt watch** from the command line and drag an svg icon into the svg folder. svgstore will bring the svg into a sprite sheet which you can reference in an external file. Say I added an icon to the svg folder with the filename of ribbon.svg.
+[svgstore][5] is a lifesaver when it comes to managing SVG icons you wish to include in a sprite sheet. All you have to do is start **grunt watch** from the command line and drag an svg icon into the svg folder. svgstore will bring the svg into a sprite sheet which you can reference in an external file. Say we add an icon to the svg folder with the filename of `ribbon.svg`.
 
-Immediately, I can reference that sprite in my HTML.
+Immediately, Grunt builds the file into our `SVG` sprite sheet, making it available within our `HTML`.
 ```html
 <a href="http://somelink.com">
   <span class="hide-text">Click the ribbon</span>
