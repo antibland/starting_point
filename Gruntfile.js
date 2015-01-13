@@ -70,7 +70,21 @@ module.exports = function(grunt) {
         ]
       }
     },
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 versions', 'ie 9']
+      },
+      your_target: {
+        files: {
+          'dist/main.min.css': ['stylesheets/main.css'],
+        }
+      }
+    },
     watch: {
+      css: {
+        files: ['stylesheets/main.css'],
+        tasks: ['autoprefixer']
+      },
       js: {
         files: ['<%= jshint.files %>'],
         tasks: ['jshint', 'concat', 'uglify']
@@ -90,7 +104,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-tenon-client');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'svgstore', 'browserSync']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'svgstore', 'autoprefixer', 'browserSync']);
 
 };

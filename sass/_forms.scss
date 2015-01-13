@@ -29,7 +29,7 @@ label {
 [type=text],
 [type=email],
 [type=password] {
-  @include border-radius($border-radius);
+  border-radius: $border-radius;
   border: 1px solid lightgray;
   display: block;
   width: 100%;

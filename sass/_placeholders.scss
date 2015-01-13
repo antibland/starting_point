@@ -39,7 +39,7 @@
 }
 
 %image-container {
-  @include transition(0.3s);
+  transition: 0.3s;
   width: 150%;
   margin-left: -25%;
 
@@ -59,8 +59,8 @@
 }
 
 %call-out {
-  @include transition(0.3s);
-  @include text-shadow(1px 1px 1px lighten($blue, 30%));
+  transition: 0.3s;
+  text-shadow: 1px 1px 1px lighten($blue, 30%);
   line-height: rhythm(1.1);
   margin: 0 auto rhythm(1);
   font-size: 125%;
