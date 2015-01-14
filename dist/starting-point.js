@@ -7,6 +7,19 @@
 ;var utilities = (function() {
   "use strict";
 
+  /* Credit: Paul Irish */
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = (function() {
+      return window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function(callback, element) {
+        window.setTimeout(callback, 1000 / 60);
+      };
+    })();
+  }
+
   var ret = {
     whichAnimationEvent: function() {
       var a,
@@ -133,6 +146,27 @@
     }
   };
 
+  function scrollToTop(_scrollDuration) {
+    var scrollDuration = _scrollDuration || 500,
+        scrollHeight = window.scrollY,
+        scrollStep = Math.PI / ( scrollDuration / 15 ),
+        cosParameter = scrollHeight / 2,
+        scrollCount = 0,
+        scrollMargin;
+
+    requestAnimationFrame(step);
+    function step () {
+      setTimeout(function() {
+        if ( window.scrollY !== 0 ) {
+          requestAnimationFrame(step);
+          scrollCount = scrollCount + 1;
+          scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
+          window.scrollTo(0, (scrollHeight - scrollMargin));
+        }
+      }, 15);
+    }
+  }
+
   function loaded() {
     setTimeout(function() {
       body.setAttribute("aria-busy", "false");
@@ -166,6 +200,7 @@
   function bindings() {
     var toggle_menu = document.querySelector("#toggle-menu"),
         nav_links   = document.querySelectorAll(".nav-link"),
+        back_to_top = document.querySelector("#back-to-top"),
         ESC         = 27;
 
     [].forEach.call(nav_links, function(el) {
@@ -178,6 +213,11 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       toggle_menu.addEventListener(click_touch, demo.toggleMenu, false);
+    }, false);
+
+    back_to_top.addEventListener("click", function(e) {
+      e.preventDefault();
+      scrollToTop();
     }, false);
 
     document.onkeydown = function(e) {
