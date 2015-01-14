@@ -1,19 +1,6 @@
 var utilities = (function() {
   "use strict";
 
-  /* Credit: Paul Irish */
-  if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = (function() {
-      return window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      function(callback, element) {
-        window.setTimeout(callback, 1000 / 60);
-      };
-    })();
-  }
-
   var ret = {
     whichAnimationEvent: function() {
       var a,

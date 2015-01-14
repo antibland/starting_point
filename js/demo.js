@@ -35,8 +35,13 @@ var demo = (function() {
     }
   };
 
-  function scrollToTop(_scrollDuration) {
-    var scrollDuration = _scrollDuration || 500,
+  function scrollToTop() {
+    if (!window.requestAnimationFrame) {
+      window.location.href = "#top";
+      return false;
+    }
+
+    var scrollDuration = 300,
         scrollHeight = window.scrollY,
         scrollStep = Math.PI / ( scrollDuration / 15 ),
         cosParameter = scrollHeight / 2,
@@ -105,7 +110,7 @@ var demo = (function() {
     }, false);
 
     back_to_top.addEventListener("click", function(e) {
-      e.preventDefault();
+      utilities.preventDefault(e);
       scrollToTop();
     }, false);
 

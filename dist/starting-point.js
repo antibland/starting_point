@@ -7,19 +7,6 @@
 ;var utilities = (function() {
   "use strict";
 
-  /* Credit: Paul Irish */
-  if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = (function() {
-      return window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      function(callback, element) {
-        window.setTimeout(callback, 1000 / 60);
-      };
-    })();
-  }
-
   var ret = {
     whichAnimationEvent: function() {
       var a,
@@ -146,8 +133,13 @@
     }
   };
 
-  function scrollToTop(_scrollDuration) {
-    var scrollDuration = _scrollDuration || 500,
+  function scrollToTop() {
+    if (!window.requestAnimationFrame) {
+      window.location.href = "#top";
+      return false;
+    }
+
+    var scrollDuration = 300,
         scrollHeight = window.scrollY,
         scrollStep = Math.PI / ( scrollDuration / 15 ),
         cosParameter = scrollHeight / 2,
@@ -216,7 +208,7 @@
     }, false);
 
     back_to_top.addEventListener("click", function(e) {
-      e.preventDefault();
+      utilities.preventDefault(e);
       scrollToTop();
     }, false);
 
