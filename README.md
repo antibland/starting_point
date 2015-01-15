@@ -4,11 +4,11 @@ We've all been there at some point. You're coding something and an inner voice a
 
 In no particular order of importance, greatest hits means:
 
-1. A small, vanila JavaScript library using the [module pattern][8]
+1. A small, vanila `JavaScript` library using the [module pattern][8]
 2. Auto minification/concatenation/linting
 3. Reusable sass mixins and placeholders
 4. A no-bullshit `SVG` workflow
-5. Testable JavaScript using Jasmine
+5. Testable `JavaScript` using Jasmine
 
 ##Browser Support##
 IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
@@ -103,7 +103,7 @@ Immediately, Grunt builds the file into our `SVG` sprite sheet, making it availa
 You can of course tweak the `SVG` styles from your `CSS`. Yeah, it's pretty easy.
 
 ###Linting###
-All JavaScript in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep my code from getting ugly.
+All `JavaScript` in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep my code from getting ugly.
 
 ###Minification###
 The default setting in `config.rb` tells `Compass` to compress all `CSS` every time we trigger a save. But what of our `JavaScript`? That should certainly be minified, too. With a few Grunt tasks, `concat` and `uglify`, this is no longer a problem—well, almost. If we instruct `concat` to join all files with a .js extension before `uglify` does the actual minification, we could have an dependency ordering problem. We need the code in `utilities.js` to load first, so that the its functions are available to any other code loaded after. This is why we organize our `concat` task in the following way:
@@ -148,7 +148,7 @@ $ git clone https://github.com/naayt/starting_point.git
 $ npm install
 ```
 
-This is an optional step. However, if you unit test your JavaScript (or want to start), definitely proceed with this step.
+This is an optional step. However, if you unit test your `JavaScript` (or want to start), definitely proceed with this step.
 ```sh
 $ bower install jquery jasmine-jquery --save-dev
 ```
