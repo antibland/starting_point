@@ -17,7 +17,7 @@ IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
 
 ###Vertical Rhythm###
 
-Establishing a vertical rhythm at the outset of a web project makes your content much easier to consume. Compass makes this pretty easy to set up and you can read more about vertical rhythm [here][3].
+Establishing a vertical rhythm at the outset of a web project makes your content much easier to consume. `Compass` makes this pretty easy to set up and you can read more about vertical rhythm [here][3].
 
 ###Responsive Videos and Images###
 
@@ -102,11 +102,41 @@ Immediately, Grunt builds the file into our `SVG` sprite sheet, making it availa
 ```
 You can of course tweak the `SVG` styles from your `CSS`. Yeah, it's pretty easy.
 
-###JavaScript Linting###
+###Linting###
 All JavaScript in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep my code from getting ugly.
 
 ###Minification###
-The default setting in config.rb tells compass to compress all `CSS` every time you trigger a save. JavaScript, however, is not included in this process. However, we're covered during a grunt watch. All JavaScript is concatenated and minified each save point.
+The default setting in `config.rb` tells `Compass` to compress all `CSS` every time we trigger a save. But what of our `JavaScript`? That should certainly be minified, too. With a few Grunt tasks, `concat` and `uglify`, this is no longer a problem—well, almost. If we instruct `concat` to join all files with a .js extension before `uglify` does the actual minification, we could have an dependency ordering problem. We need the code in `utilities.js` to load first, so that the its functions are available to any other code loaded after. This is why we organize our `concat` task in the following way:
+
+`Gruntfile.js`
+```js
+concat: {
+  options: {
+    separator: ';'
+  },
+  dist: {
+    src: [['js/vendor/*.js'], 'js/utilities.js', 'js/main.js', 'js/demo.js'],
+    dest: 'dist/<%= pkg.name %>.js'
+  }
+}
+```
+
+###Automatic Prefixing###
+For a long time I have used `Compass` to handle all my prefixing needs. If you are a `Compass` user, you have probably written something like this before:
+
+```scss
+@include opacity(0.8);
+@include transform(translateY(0.1em) scaleX(1.1) scaleY(.9));
+```
+
+And, of course, this is fine, and we can trust `Compass` to reliably deliver us `CSS`. Using `autoprefixer`, though, we can get right the `CSS` and skip the middleman.
+
+```css
+opacity: 0.8;
+transform: translateY(0.1em), scaleX(1.1), scaleY(.9);
+```
+
+The resulting `CSS` will be the same, with the necessary prefixes included for us.
 
 ##Installation##
 
