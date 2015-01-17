@@ -83,7 +83,7 @@ toggle_menu.addEventListener(click_touch, handler);
 
 ###Modular CSS Approach###
 
-This just means all the `CSS` is broken down in partials (footer, animations, common, forms, etc.). These partials tend to make your code much easier to manage as your project grows.
+This just means all the `CSS` is broken down into partials (footer, animations, common, forms, etc.). These partials tend to make your code much easier to manage as your project grows. Footer changes go in the footer partial; new animations go in the animations partial. `CSS` turns out okay if you are consistent and practical.
 
 ##Grunt Tasks##
 Starting Point uses [Grunt][4] to handle some common, yet tedious, tasks.
