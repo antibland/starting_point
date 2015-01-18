@@ -106,7 +106,9 @@ You can of course tweak the `SVG` styles from your `CSS`. Yeah, it's pretty easy
 All `JavaScript` in Starting Point is strict and should stay that way. While grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep my code from getting ugly.
 
 ###Minification###
-The default setting in `config.rb` tells `Compass` to compress all `CSS` every time we trigger a save. But what of our `JavaScript`? That should certainly be minified, too. With a few Grunt tasks, `concat` and `uglify`, this is no longer a problem—well, almost. If we instruct `concat` to join all files with a .js extension before `uglify` does the actual minification, we could have an dependency ordering problem. We need the code in `utilities.js` to load first, so that the its functions are available to any other code loaded after. This is why we organize our `concat` task in the following way:
+`Ruby` users are likely familiar with `config.rb`, a file which is created for us by `Compass`. There, we can set a value for the variable `output_style`, which determines what happens each time we save a watched `sass` file. I always set this variable to `:compressed` to make my `CSS` file size as light as possible.
+
+But what of our `JavaScript`? That should certainly be minified, too. With a few Grunt tasks, `concat` and `uglify`, this is no longer a problem—well, almost. If we instruct `concat` to join all files with a .js extension before `uglify` does the actual minification, we could have an dependency ordering problem. We need the code in `utilities.js` to load first, so that the its functions are available to any other code loaded after. This is why we organize our `concat` task in the following way:
 
 `Gruntfile.js`
 ```js
