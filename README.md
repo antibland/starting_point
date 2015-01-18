@@ -131,7 +131,7 @@ For a long time I have used `Compass` to handle all my prefixing needs. If you a
 @include transform(translateY(0.1em) scaleX(1.1) scaleY(.9));
 ```
 
-And, of course, this is fine, and we can trust `Compass` to reliably deliver us `CSS`. Using `autoprefixer`, though, we can get right the `CSS` and skip the middleman.
+And, of course, this is fine, and we can trust `Compass` to reliably deliver us `CSS`. Using `autoprefixer`, though, we can get right to the `CSS` and skip the middleman.
 
 ```css
 opacity: 0.8;
