@@ -12,8 +12,8 @@ var utilities = (function() {
             'WebkitTransition':'webkitAnimationEnd'
           };
 
-      for (a in animations){
-        if(el.style[a] !== undefined){
+      for (a in animations) {
+        if(el.style[a] !== undefined) {
           return animations[a];
         }
       }
@@ -29,8 +29,8 @@ var utilities = (function() {
             'WebkitTransition':'webkitTransitionEnd'
           };
 
-      for (t in transitions){
-        if (el.style[t] !== undefined){
+      for (t in transitions) {
+        if (el.style[t] !== undefined) {
           return transitions[t];
         }
       }
