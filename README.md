@@ -9,6 +9,7 @@ In no particular order of importance, greatest hits means:
 3. Reusable sass mixins and placeholders
 4. A no-bullshit `SVG` workflow
 5. Testable `JavaScript` using Jasmine
+6. An easy way to catch accessibility issues before going live  
 
 ##Browser Support##
 IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
