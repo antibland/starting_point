@@ -8,7 +8,7 @@ In no particular order of importance, greatest hits means:
 2. Auto minification/concatenation/linting
 3. Reusable sass mixins and placeholders
 4. A no-bullshit `SVG` workflow
-5. Testable `JavaScript` using Jasmine
+5. `JavaScript` unit testing with [Jasmine][9]
 6. An easy way to catch accessibility issues before going live  
 
 ##Browser Support##
@@ -215,3 +215,4 @@ You're cloning the entire [demo][6], which is probably more than you need. If yo
 [6]: http://naayt.github.io/starting_point/
 [7]: https://github.com/naayt/starting_point/blob/gh-pages/LICENSE
 [8]: http://goo.gl/f5LZm
+[9]: http://jasmine.github.io/2.0/introduction.html
