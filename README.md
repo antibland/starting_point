@@ -5,7 +5,7 @@ We've all been there. You're coding something and an inner voice announces, "Thi
 In no particular order of importance, greatest hits means:
 
 1. A small, vanila `JavaScript` library using the [module pattern][8]
-2. Auto minification/concatenation/linting
+2. Auto minification/concatenation/`JavaScript` linting
 3. Reusable sass mixins and placeholders
 4. A no-bullshit `SVG` workflow
 5. `JavaScript` unit testing with [Jasmine][9]
