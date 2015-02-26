@@ -201,7 +201,7 @@ This is a barebones thing I've cobbled together in my spare time and is by no me
 
 ##Notes##
 
-You're cloning the entire [demo][6], which is probably more than you need. If you look in the sass folder, you can remove the files beginning with _custom for a cleaner start and the call to demo.init() at the bottom of `index.html`.
+You're cloning the entire [demo][6], which is probably more than you need. If you look in the sass folder, you can remove the files beginning with _custom for a cleaner start and the call to `demo.init()` at the bottom of `index.html`.
 
 ##License##
 
