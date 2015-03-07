@@ -57,10 +57,6 @@
   }
 }
 
-@mixin blur($value: 4px) {
-  filter: blur($value);
-}
-
 @mixin button($color: #337ab8, $text: 0.8rem, $padding: 0.25em 0.6em) {
   //border
   $hue1: $color;
