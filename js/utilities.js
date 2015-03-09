@@ -36,6 +36,10 @@ var utilities = (function() {
       }
     },
 
+    getScrollHeight: function() {
+      return ("scrollY" in window) ? window.scrollY : document.documentElement.scrollTop;
+    },
+
     isTouchDevice: function() {
       return document.querySelector("html").classList.contains('touch');
     },

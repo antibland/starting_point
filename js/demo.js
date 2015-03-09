@@ -42,7 +42,7 @@ var demo = (function() {
     }
 
     var scrollDuration = 300,
-        scrollHeight   = window.scrollY,
+        scrollHeight   = utilities.getScrollHeight(),
         scrollStep     = Math.PI / ( scrollDuration / 15 ),
         cosParameter   = scrollHeight / 2,
         scrollCount    = 0,
@@ -52,7 +52,8 @@ var demo = (function() {
 
     function step () {
       setTimeout(function() {
-        if (window.scrollY !== 0) {
+
+        if (utilities.getScrollHeight() !== 0) {
           requestAnimationFrame(step);
           scrollCount = scrollCount + 1;
           scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );

@@ -42,6 +42,10 @@
       }
     },
 
+    getScrollHeight: function() {
+      return ("scrollY" in window) ? window.scrollY : document.documentElement.scrollTop;
+    },
+
     isTouchDevice: function() {
       return document.querySelector("html").classList.contains('touch');
     },
@@ -140,7 +144,7 @@
     }
 
     var scrollDuration = 300,
-        scrollHeight   = window.scrollY,
+        scrollHeight   = utilities.getScrollHeight(),
         scrollStep     = Math.PI / ( scrollDuration / 15 ),
         cosParameter   = scrollHeight / 2,
         scrollCount    = 0,
@@ -150,7 +154,8 @@
 
     function step () {
       setTimeout(function() {
-        if (window.scrollY !== 0) {
+
+        if (utilities.getScrollHeight() !== 0) {
           requestAnimationFrame(step);
           scrollCount = scrollCount + 1;
           scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
