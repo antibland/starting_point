@@ -144,7 +144,7 @@ The resulting `CSS` will be the same, with the necessary prefixes included for u
 ##Installation##
 
 ```sh
-$ git clone https://github.com/naayt/starting_point.git
+$ git clone https://github.com/antibland/starting_point.git
 ```
 
 ```sh
