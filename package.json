@@ -5,7 +5,7 @@
   "author": "Andy Hoffman",
   "repository": {
     "type": "git",
-    "url": "https://github.com/naayt/starting_point"
+    "url": "https://github.com/antibland/starting_point"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
