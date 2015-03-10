@@ -212,7 +212,7 @@ You're cloning the entire [demo][6], which is probably more than you need. If yo
 [3]: http://www.zell-weekeat.com/compass-vertical-rhythm/
 [4]: http://gruntjs.com/
 [5]: https://github.com/FWeinb/grunt-svgstore
-[6]: http://naayt.github.io/starting_point/
-[7]: https://github.com/naayt/starting_point/blob/gh-pages/LICENSE
+[6]: http://antibland.github.io/starting_point/
+[7]: https://github.com/antibland/starting_point/blob/gh-pages/LICENSE
 [8]: http://goo.gl/f5LZm
 [9]: http://jasmine.github.io/2.0/introduction.html
