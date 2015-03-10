@@ -111,7 +111,7 @@ var demo = (function() {
       toggle_menu.addEventListener(click_touch, demo.toggleMenu, false);
     }, false);
 
-    back_to_top.addEventListener("click", function(e) {
+    back_to_top.addEventListener(click_touch, function(e) {
       utilities.preventDefault(e);
       scrollToTop();
     }, false);
