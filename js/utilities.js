@@ -6,10 +6,10 @@ var utilities = (function() {
       var a,
           el = document.createElement('fakeelement'),
           animations = {
-            'animation':'animationend',
-            'OAnimation':'oAnimationEnd',
-            'MozTransition':'animationend',
-            'WebkitTransition':'webkitAnimationEnd'
+            'animation'      : 'animationend',
+            'OAnimation'     : 'oAnimationEnd',
+            'MozAnimation'   : 'animationend',
+            'WebkitAnimation': 'webkitAnimationEnd'
           };
 
       for (a in animations) {
@@ -23,9 +23,9 @@ var utilities = (function() {
       var t,
           el = document.createElement('fakeelement'),
           transitions = {
-            'transition':'transitionend',
-            'OTransition':'oTransitionEnd',
-            'MozTransition':'transitionend',
+            'transition'      :'transitionend',
+            'OTransition'     :'oTransitionEnd',
+            'MozTransition'   :'transitionend',
             'WebkitTransition':'webkitTransitionEnd'
           };
 
