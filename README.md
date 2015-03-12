@@ -44,13 +44,13 @@ I like having a padded main content area with 100% wide images that extend beyon
 
 Have you ever wanted something to happen after your `CSS` transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use `animationend` and `transitionend`, both stored in `utilities.js`.
 ```javascript
-whichTransitionEvent /* returns correct vendor prefix */
+whichCSSEvent /* returns correct vendor prefix for desired event */
 ```
 
 You might use it like this:
 
 ```javascript
-var transitionend = utilities.whichTransitionEvent();
+var transitionend = utilities.whichCSSEvent("transition");
 
 if (transitionend) { // browser supports transitionend
   container.addEventListener(transitionend, handler, false);
@@ -65,7 +65,7 @@ A useful place for this would be to determine the type of event listener to atta
 var click_touch = utilities.isTouchDevice() ? "touchstart" : "click",
     toggle_menu = document.querySelector("#toggle-menu");
 
-toggle_menu.addEventListener(click_touch, handler);
+toggle_menu.addEventListener(click_touch, handler, false);
 ```
 
 ###Useful Mixins###
