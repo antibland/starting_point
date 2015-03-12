@@ -1,37 +1,33 @@
 var utilities = (function() {
   "use strict";
 
-  var ret = {
-    whichAnimationEvent: function() {
-      var a,
-          el = document.createElement('fakeelement'),
-          animations = {
-            'animation'      : 'animationend',
-            'OAnimation'     : 'oAnimationEnd',
-            'MozAnimation'   : 'animationend',
-            'WebkitAnimation': 'webkitAnimationEnd'
-          };
-
-      for (a in animations) {
-        if(el.style[a] !== undefined) {
-          return animations[a];
-        }
-      }
+  var end_prefixes = {
+    animation: {
+      'animation'      : 'animationend',
+      'OAnimation'     : 'oAnimationEnd',
+      'MozAnimation'   : 'animationend',
+      'WebkitAnimation': 'webkitAnimationEnd'
     },
+    transition: {
+      'transition'      :'transitionend',
+      'OTransition'     :'oTransitionEnd',
+      'MozTransition'   :'transitionend',
+      'WebkitTransition':'webkitTransitionEnd'
+    }
+  };
 
-    whichTransitionEvent: function() {
-      var t,
-          el = document.createElement('fakeelement'),
-          transitions = {
-            'transition'      :'transitionend',
-            'OTransition'     :'oTransitionEnd',
-            'MozTransition'   :'transitionend',
-            'WebkitTransition':'webkitTransitionEnd'
-          };
 
-      for (t in transitions) {
-        if (el.style[t] !== undefined) {
-          return transitions[t];
+  var ret = {
+    whichCSSEvent: function(event_type) {
+      var el = document.createElement('fakeelement');
+
+      if (event_type === "animation" || event_type === "transition") {
+
+        for (var a in end_prefixes[event_type]) {
+
+          if (el.style[a] !== "undefined") {
+            return end_prefixes[event_type][a];
+          }
         }
       }
     },
@@ -42,20 +38,6 @@ var utilities = (function() {
 
     isTouchDevice: function() {
       return document.querySelector("html").classList.contains('touch');
-    },
-
-    chain: function(obj) {
-      var waiting_for = document.querySelector(obj.waiting_for),
-          next_up     = document.querySelector(obj.next_up),
-          apply       = obj.apply;
-
-      function applyClass() {
-        next_up.classList.add(apply);
-      }
-
-      if (transitionend) {
-        waiting_for.addEventListener(transitionend, applyClass, false);
-      }
     },
 
     loadTemplate: function(template, destination) {

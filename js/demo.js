@@ -1,19 +1,15 @@
 var demo = (function() {
   "use strict";
 
-  var transitionend, animationend, click_touch, body, container,
-      nav, content_pusher, ret;
+  var click_touch, body, container, nav, content_pusher, ret;
 
   ret = {
     init: function() {
-      transitionend  = utilities.whichTransitionEvent();
-      animationend   = utilities.whichAnimationEvent();
       click_touch    = utilities.isTouchDevice() ? "touchstart" : "click";
       body           = document.querySelector("body");
       container      = document.querySelector(".container");
       nav            = document.querySelector("[role=navigation]");
       content_pusher = document.querySelector(".content-pusher");
-
       bindings();
     },
 
