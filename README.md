@@ -13,7 +13,7 @@ These are some things I value when beginning a web project:
 3. Reusable sass mixins and placeholders
 4. A no-bullshit `SVG` workflow
 5. `JavaScript` unit testing with [Jasmine][9]
-6. An easy way to catch accessibility issues before going live  
+6. An easy way to catch accessibility issues before going live
 
 ##Browser Support##
 IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
@@ -48,13 +48,13 @@ I like having a padded main content area with 100% wide images that extend beyon
 
 Have you ever wanted something to happen after your `CSS` transition or animation ended? Yes, you can fire that second transition or animation with a delay containing the same value as the first even duration—but that's a risky venture. This is where you would use `animationend` and `transitionend`, both stored in `utilities.js`.
 ```javascript
-whichCSSEvent /* returns correct vendor prefix for desired event */
+whichTransitionEvent /* returns correct vendor prefix for desired event */
 ```
 
 You might use it like this:
 
 ```javascript
-var transitionend = utilities.whichCSSEvent("transition");
+var transitionend = utilities.whichTransitionEvent();
 
 if (transitionend) { // browser supports transitionend
   container.addEventListener(transitionend, handler, false);

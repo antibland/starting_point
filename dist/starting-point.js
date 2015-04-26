@@ -7,33 +7,37 @@
 ;var utilities = (function() {
   "use strict";
 
-  var end_prefixes = {
-    animation: {
-      'animation'      : 'animationend',
-      'OAnimation'     : 'oAnimationEnd',
-      'MozAnimation'   : 'animationend',
-      'WebkitAnimation': 'webkitAnimationEnd'
-    },
-    transition: {
-      'transition'      :'transitionend',
-      'OTransition'     :'oTransitionEnd',
-      'MozTransition'   :'transitionend',
-      'WebkitTransition':'webkitTransitionEnd'
-    }
-  };
-
-
   var ret = {
-    whichCSSEvent: function(event_type) {
-      var el = document.createElement('fakeelement');
+    whichAnimationEvent: function() {
+      var t,
+          el         = document.createElement("fakeelement"),
+          animations = {
+            "animation"      : "animationend",
+            "OAnimation"     : "oAnimationEnd",
+            "MozAnimation"   : "animationend",
+            "WebkitAnimation": "webkitAnimationEnd"
+          };
 
-      if (event_type === "animation" || event_type === "transition") {
+      for (t in animations){
+        if (el.style[t] !== undefined){
+          return animations[t];
+        }
+      }
+    },
 
-        for (var a in end_prefixes[event_type]) {
+    whichTransitionEvent: function() {
+      var t,
+          el          = document.createElement("fakeelement"),
+          transitions = {
+            "transition"      : "transitionend",
+            "OTransition"     : "oTransitionEnd",
+            "MozTransition"   : "transitionend",
+            "WebkitTransition": "webkitTransitionEnd"
+          };
 
-          if (el.style[a] !== "undefined") {
-            return end_prefixes[event_type][a];
-          }
+      for (t in transitions){
+        if (el.style[t] !== undefined){
+          return transitions[t];
         }
       }
     },
