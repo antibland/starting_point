@@ -105,7 +105,7 @@ Immediately, Grunt builds the file into our `SVG` sprite sheet, making it availa
   </svg>
 </a>
 ```
-Of course, you can tweak the `SVG` styles from your `CSS`. It's dead simple.
+You can then adjust the `CSS` styles for your `SVG`. It's dead simple.
 
 ###Linting###
 All `JavaScript` in Starting Point is strict and should stay that way. While Grunt is watching, it will yell at you if you break the linter rules in some way. Missing a semi-colon? Sorry—fix it. Declared a variable at the bottom of a function? Sorry—fix it. I like having the linter around to keep my code from getting ugly.
