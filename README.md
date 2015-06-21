@@ -18,9 +18,9 @@ IE9+, Chrome, Firefox, Opera, Safari, iOS Safari, and Android 4+.
 
 ##What's In Here?
 
-###Vertical Rhythm Rules###
+###Typographical Vertical Rhythm###
 
-Establishing a vertical rhythm at the outset of a web project makes your content much easier to consume. `Compass` makes this pretty easy to set up and you can read more about vertical rhythm [here][3].
+Establishing a typographical vertical rhythm at the outset of a web project makes your content much easier to read and understand. `Compass` makes this pretty easy to set up and you can read more about vertical rhythm [here][3].
 
 ###Responsive Videos and Images###
 
