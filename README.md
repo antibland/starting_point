@@ -4,7 +4,7 @@ We've all been there. You're coding something when an inner voice suddenly annou
 
 Six months later, you're working on a new project and can't find that useful utility you once wrote. So you write it again. And again. Can we please stop recreating our greatest hits ad infinitum?
 
-These are some things I value when beginning a web project:
+When beginning a web project, I need these things:
 
 1. A small, vanila `JavaScript` library using the [module pattern][8]
 2. Auto minification/concatenation/`JavaScript` linting
