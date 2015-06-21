@@ -2,9 +2,7 @@
 
 We've all been there. You're coding something when an inner voice suddenly announces, "This should be its own thing. Don't forget to pull this code out and make it its own thing." But you're busy and you don't do it.
 
-Six months later...
-
-You're working on a new project and can't find that useful utility you once wrote. So you write it again. And again. Can we please stop recreating our greatest hits ad infinitum?
+Six months later, you're working on a new project and can't find that useful utility you once wrote. So you write it again. And again. Can we please stop recreating our greatest hits ad infinitum?
 
 These are some things I value when beginning a web project:
 
